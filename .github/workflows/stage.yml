@@ -1,0 +1,59 @@
+# STAGE: cada push a la rama "stage" publica https://stage.ruav.com.mx
+# en un repositorio aparte (GitHub Pages solo permite un sitio por repositorio).
+#
+# Requiere (ver README, sección "Ambiente de stage"):
+#   - Variable del repositorio  STAGE_REPO       -> ej. "usuario/ruav-stage"
+#   - Secreto del repositorio   STAGE_DEPLOY_KEY -> llave SSH privada con permiso de escritura
+#                                                   SOLO sobre el repositorio de stage
+name: Publicar stage
+
+on:
+  push:
+    branches: [stage]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-stage
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: stage
+      url: https://stage.ruav.com.mx
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Preparar archivos públicos (stage)
+        run: bash tools/prepare_site.sh stage
+
+      - name: Publicar en el repositorio de stage
+        env:
+          STAGE_REPO: ${{ vars.STAGE_REPO }}
+          STAGE_DEPLOY_KEY: ${{ secrets.STAGE_DEPLOY_KEY }}
+        run: |
+          set -euo pipefail
+          if [ -z "${STAGE_REPO}" ] || [ -z "${STAGE_DEPLOY_KEY}" ]; then
+            echo "::error::Falta configurar STAGE_REPO (variable) o STAGE_DEPLOY_KEY (secreto)."
+            exit 1
+          fi
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "${STAGE_DEPLOY_KEY}" > ~/.ssh/stage_key && chmod 600 ~/.ssh/stage_key
+          # Llave pública oficial de github.com (https://docs.github.com/es/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints)
+          echo "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" > ~/.ssh/known_hosts
+          export GIT_SSH_COMMAND="ssh -i ~/.ssh/stage_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes"
+
+          cd _site
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Stage: ${GITHUB_SHA::7}"
+          git push --force "git@github.com:${STAGE_REPO}.git" gh-pages
+          rm -f ~/.ssh/stage_key

@@ -1,0 +1,72 @@
+<!--
+title: Catálogo | RUAV Mobiliario
+description: Catálogo de mobiliario de oficina RUAV: escritorios tipo grapa, mesas de asamblea, barras altas, credenzas, cubiertas, pedestales, archiveros, almacenamiento y lockers.
+nav: catalogo
+-->
+    <div class="page-head">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li id="crumb-cat" hidden></li>
+        </ol>
+        <h1 id="cat-title">Catálogo de mobiliario</h1>
+        <p id="cat-blurb">Mobiliario de oficina en panel melamínico. Agrega productos a tu lista y envía tu cotización por WhatsApp.</p>
+      </div>
+    </div>
+
+    <div class="container catalog">
+      <div class="filters-backdrop drawer-backdrop" hidden></div>
+      <aside class="filters" id="filters" aria-label="Filtros">
+        <div class="filters-head">
+          <h2>Filtros</h2>
+          <button class="icon-btn" type="button" data-close-filters aria-label="Cerrar filtros"><svg aria-hidden="true"><use href="assets/img/icons.svg#close"></use></svg></button>
+        </div>
+        <div class="filter-group">
+          <h2>Categoría</h2>
+          <ul class="filter-list" id="f-cat"></ul>
+        </div>
+        <div class="filter-group" id="g-tipo" hidden>
+          <h2>Tipo</h2>
+          <ul class="filter-list" id="f-tipo"></ul>
+        </div>
+        <div class="filter-group">
+          <h2>Medidas</h2>
+          <div class="range-row">
+            <label>Frente (largo)<select class="field" id="f-frente"></select></label>
+            <label>Fondo<select class="field" id="f-fondo"></select></label>
+            <label><span id="l-alto">Alto</span><select class="field" id="f-alto"></select></label>
+          </div>
+        </div>
+        <button class="btn btn-outline btn-sm btn-block btn-clear" type="button" data-clear-filters>Limpiar filtros</button>
+        <button class="btn btn-dark btn-block btn-clear filters-toggle" type="button" data-close-filters>Ver resultados</button>
+      </aside>
+
+      <div>
+        <div class="toolbar">
+          <button class="btn btn-outline btn-sm filters-toggle" type="button" id="filters-open"><svg aria-hidden="true"><use href="assets/img/icons.svg#filter"></use></svg> Filtros</button>
+          <p class="results" aria-live="polite"><strong id="results-count">0</strong><span id="results-noun"> productos</span></p>
+          <form class="search-inline" id="q-form" role="search">
+            <svg aria-hidden="true"><use href="assets/img/icons.svg#search"></use></svg>
+            <label class="visually-hidden" for="q-inline">Buscar en el catálogo</label>
+            <input class="field" id="q-inline" type="search" placeholder="Buscar por nombre, clave o medida" maxlength="80" autocomplete="off">
+          </form>
+          <label class="visually-hidden" for="orden">Ordenar</label>
+          <select class="field" id="orden">
+            <option value="">Orden del catálogo</option>
+            <option value="frente-asc">Medida: menor a mayor</option>
+            <option value="frente-desc">Medida: mayor a menor</option>
+            <option value="clave">Clave (A–Z)</option>
+          </select>
+        </div>
+        <div class="active-filters" id="active-filters" hidden></div>
+        <div class="product-grid" id="catalog-grid"></div>
+        <div class="empty" id="catalog-empty" hidden>
+          <h2>No encontramos productos con esos filtros</h2>
+          <p>Prueba con otra medida o búsqueda. Si necesitas algo especial, escríbenos.</p>
+          <button class="btn btn-outline btn-sm" type="button" data-clear-filters>Limpiar filtros</button>
+          <a class="btn btn-wa btn-sm" href="catalogo.html" data-wa-general><svg aria-hidden="true"><use href="assets/img/icons.svg#wa"></use></svg> Preguntar por WhatsApp</a>
+        </div>
+        <div class="load-more"><button class="btn btn-dark" type="button" id="load-more" hidden><span class="label">Ver más productos</span></button></div>
+      </div>
+    </div>

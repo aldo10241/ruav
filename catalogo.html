@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Catálogo | RUAV Mobiliario</title>
+  <meta name="description" content="Catálogo de mobiliario de oficina RUAV: escritorios tipo grapa, mesas de asamblea, barras altas, credenzas, cubiertas, pedestales, archiveros, almacenamiento y lockers.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#141312">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="RUAV Mobiliario">
+  <meta property="og:title" content="Catálogo | RUAV Mobiliario">
+  <meta property="og:description" content="Catálogo de mobiliario de oficina RUAV: escritorios tipo grapa, mesas de asamblea, barras altas, credenzas, cubiertas, pedestales, archiveros, almacenamiento y lockers.">
+  <meta property="og:image" content="https://ruav.com.mx/assets/img/og-ruav.jpg">
+  <meta property="og:url" content="https://ruav.com.mx/catalogo.html">
+  <link rel="canonical" href="https://ruav.com.mx/catalogo.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/catalogo-data.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <div class="topbar">
+    <div class="container">
+      <span class="hide-sm">Mobiliario de oficina en panel melamínico · Herrajes BLUM</span>
+      <span>¿Necesitas precio? <a href="catalogo.html" data-wa-general>Cotiza por WhatsApp</a></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-main">
+      <button class="icon-btn menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+        <svg aria-hidden="true"><use href="assets/img/icons.svg#menu"></use></svg>
+      </button>
+      <a class="brand" href="index.html" aria-label="RUAV Mobiliario, inicio">
+        <img src="assets/img/logo-ruav.webp" alt="RUAV Mobiliario" width="640" height="267">
+      </a>
+      <nav id="nav" class="main-nav" aria-label="Principal">
+        <div class="nav-drop">
+          <button type="button" aria-expanded="false" aria-haspopup="true">Productos <svg aria-hidden="true"><use href="assets/img/icons.svg#chevron"></use></svg></button>
+          <div class="mega"></div>
+        </div>
+        <a href="catalogo.html" aria-current="page">Catálogo</a>
+        <a class="nav-optional" href="catalogo.html?cat=mesas-asamblea">Salas de juntas</a>
+        <a href="index.html#como-cotizar">Cómo cotizar</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+      <form class="header-search" role="search" action="catalogo.html" method="get">
+        <svg aria-hidden="true"><use href="assets/img/icons.svg#search"></use></svg>
+        <label class="visually-hidden" for="q-header">Buscar productos</label>
+        <input id="q-header" type="search" name="q" placeholder="Buscar: escritorio, locker, clave…" maxlength="80" autocomplete="off">
+      </form>
+      <button class="quote-btn" type="button" data-open-quote aria-controls="cotizacion">
+        <svg aria-hidden="true"><use href="assets/img/icons.svg#list"></use></svg>
+        <span class="label">Cotización</span>
+        <span class="badge" data-quote-count hidden>0</span>
+        <span class="visually-hidden">productos en tu cotización</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-head">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li id="crumb-cat" hidden></li>
+        </ol>
+        <h1 id="cat-title">Catálogo de mobiliario</h1>
+        <p id="cat-blurb">Mobiliario de oficina en panel melamínico. Agrega productos a tu lista y envía tu cotización por WhatsApp.</p>
+      </div>
+    </div>
+
+    <div class="container catalog">
+      <div class="filters-backdrop drawer-backdrop" hidden></div>
+      <aside class="filters" id="filters" aria-label="Filtros">
+        <div class="filters-head">
+          <h2>Filtros</h2>
+          <button class="icon-btn" type="button" data-close-filters aria-label="Cerrar filtros"><svg aria-hidden="true"><use href="assets/img/icons.svg#close"></use></svg></button>
+        </div>
+        <div class="filter-group">
+          <h2>Categoría</h2>
+          <ul class="filter-list" id="f-cat"></ul>
+        </div>
+        <div class="filter-group" id="g-tipo" hidden>
+          <h2>Tipo</h2>
+          <ul class="filter-list" id="f-tipo"></ul>
+        </div>
+        <div class="filter-group">
+          <h2>Medidas</h2>
+          <div class="range-row">
+            <label>Frente (largo)<select class="field" id="f-frente"></select></label>
+            <label>Fondo<select class="field" id="f-fondo"></select></label>
+            <label><span id="l-alto">Alto</span><select class="field" id="f-alto"></select></label>
+          </div>
+        </div>
+        <button class="btn btn-outline btn-sm btn-block btn-clear" type="button" data-clear-filters>Limpiar filtros</button>
+        <button class="btn btn-dark btn-block btn-clear filters-toggle" type="button" data-close-filters>Ver resultados</button>
+      </aside>
+
+      <div>
+        <div class="toolbar">
+          <button class="btn btn-outline btn-sm filters-toggle" type="button" id="filters-open"><svg aria-hidden="true"><use href="assets/img/icons.svg#filter"></use></svg> Filtros</button>
+          <p class="results" aria-live="polite"><strong id="results-count">0</strong><span id="results-noun"> productos</span></p>
+          <form class="search-inline" id="q-form" role="search">
+            <svg aria-hidden="true"><use href="assets/img/icons.svg#search"></use></svg>
+            <label class="visually-hidden" for="q-inline">Buscar en el catálogo</label>
+            <input class="field" id="q-inline" type="search" placeholder="Buscar por nombre, clave o medida" maxlength="80" autocomplete="off">
+          </form>
+          <label class="visually-hidden" for="orden">Ordenar</label>
+          <select class="field" id="orden">
+            <option value="">Orden del catálogo</option>
+            <option value="frente-asc">Medida: menor a mayor</option>
+            <option value="frente-desc">Medida: mayor a menor</option>
+            <option value="clave">Clave (A–Z)</option>
+          </select>
+        </div>
+        <div class="active-filters" id="active-filters" hidden></div>
+        <div class="product-grid" id="catalog-grid"></div>
+        <div class="empty" id="catalog-empty" hidden>
+          <h2>No encontramos productos con esos filtros</h2>
+          <p>Prueba con otra medida o búsqueda. Si necesitas algo especial, escríbenos.</p>
+          <button class="btn btn-outline btn-sm" type="button" data-clear-filters>Limpiar filtros</button>
+          <a class="btn btn-wa btn-sm" href="catalogo.html" data-wa-general><svg aria-hidden="true"><use href="assets/img/icons.svg#wa"></use></svg> Preguntar por WhatsApp</a>
+        </div>
+        <div class="load-more"><button class="btn btn-dark" type="button" id="load-more" hidden><span class="label">Ver más productos</span></button></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/img/logo-ruav.webp" alt="RUAV Mobiliario" width="640" height="267" loading="lazy">
+        <p>Mobiliario de oficina funcional y duradero para empresas, despachos y espacios de trabajo.</p>
+      </div>
+      <div>
+        <h3>Productos</h3>
+        <ul>
+          <li><a href="catalogo.html?cat=escritorios">Escritorios</a></li>
+          <li><a href="catalogo.html?cat=mesas-asamblea">Mesas de asamblea</a></li>
+          <li><a href="catalogo.html?cat=credenzas">Credenzas</a></li>
+          <li><a href="catalogo.html?cat=almacenamiento">Almacenamiento</a></li>
+          <li><a href="catalogo.html?cat=lockers">Lockers</a></li>
+          <li><a href="catalogo.html">Ver todo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>RUAV</h3>
+        <ul>
+          <li><a href="index.html#como-cotizar">Cómo cotizar</a></li>
+          <li><a href="index.html#proyectos">Proyectos para empresas</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+          <li><a href="aviso-de-privacidad.html">Aviso de privacidad</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <ul>
+          <li><a href="catalogo.html" data-wa-general>WhatsApp</a></li>
+          <li data-cfg-row><a href="index.html#contacto" data-cfg="telefono"></a></li>
+          <li data-cfg-row><a href="index.html#contacto" data-cfg="email"></a></li>
+          <li data-cfg-row><span data-cfg="horario"></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span data-year>2026</span> RUAV Mobiliario. Todos los derechos reservados.</span>
+      <a href="aviso-de-privacidad.html">Aviso de privacidad</a>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="catalogo.html" data-wa-general aria-label="Escríbenos por WhatsApp">
+    <svg aria-hidden="true"><use href="assets/img/icons.svg#wa"></use></svg>
+  </a>
+
+  <div class="drawer-backdrop" id="quote-backdrop" hidden></div>
+  <aside id="cotizacion" class="drawer" role="dialog" aria-modal="true" aria-labelledby="cotizacion-title" aria-hidden="true" hidden>
+    <div class="drawer-head">
+      <h2 id="cotizacion-title">Mi cotización</h2>
+      <button class="icon-btn" type="button" data-close-quote aria-label="Cerrar cotización">
+        <svg aria-hidden="true"><use href="assets/img/icons.svg#close"></use></svg>
+      </button>
+    </div>
+    <div class="drawer-body">
+      <div class="quote-empty">
+        <svg aria-hidden="true"><use href="assets/img/icons.svg#list"></use></svg>
+        <p><strong>Tu lista está vacía.</strong><br>Agrega productos del catálogo y envía tu solicitud de cotización por WhatsApp en un solo mensaje.</p>
+        <a class="btn btn-dark btn-sm" href="catalogo.html">Explorar catálogo</a>
+      </div>
+      <ul class="quote-items"></ul>
+      <form class="quote-form" id="quote-form" autocomplete="on" hidden>
+        <h3>Datos para tu cotización <small>(opcional)</small></h3>
+        <div class="grid2">
+          <label>Nombre<input class="field" name="nombre" maxlength="80" autocomplete="name"></label>
+          <label>Empresa<input class="field" name="empresa" maxlength="80" autocomplete="organization"></label>
+        </div>
+        <label>Ciudad de entrega<input class="field" name="ciudad" maxlength="60" autocomplete="address-level2"></label>
+        <label>Comentarios (acabado, color, fecha requerida…)<textarea class="field" name="notas" maxlength="500" rows="3"></textarea></label>
+      </form>
+    </div>
+    <div class="drawer-foot" hidden>
+      <div class="quote-total"><span>Resumen</span><strong data-quote-total></strong></div>
+      <button class="btn btn-wa btn-block" type="submit" form="quote-form">
+        <svg aria-hidden="true"><use href="assets/img/icons.svg#wa"></use></svg> Enviar cotización por WhatsApp
+      </button>
+      <button class="remove-btn" type="button" data-clear-quote>Vaciar lista</button>
+      <p class="privacy-note">Tus datos no se guardan en este sitio; solo se incluyen en el mensaje que tú envías. <a href="aviso-de-privacidad.html">Aviso de privacidad</a></p>
+    </div>
+  </aside>
+</body>
+</html>

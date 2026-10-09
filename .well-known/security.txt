@@ -1,0 +1,6 @@
+# Reporte de vulnerabilidades de seguridad (RFC 9116).
+# Renueva la fecha de expiración cada año.
+Contact: mailto:contacto@ruav.com.mx
+Expires: 2027-10-01T00:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://ruav.com.mx/.well-known/security.txt

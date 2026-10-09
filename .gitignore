@@ -1,0 +1,13 @@
+# Listas de precios y archivos del cliente: nunca subirlos al repositorio público.
+*.xlsx
+*.xls
+*.csv
+*.pdf
+_site/
+__pycache__/
+.DS_Store
+Thumbs.db
+.env
+
+# Configuración local del editor/IA
+.claude/

@@ -1,0 +1,31 @@
+<!--
+title: Producto | RUAV Mobiliario
+canonical: dinamico
+description: Ficha técnica de mobiliario de oficina RUAV. Cotiza por WhatsApp.
+-->
+    <div class="container">
+      <ol class="breadcrumb crumb-top">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a id="crumb-cat" href="catalogo.html">Categoría</a></li>
+        <li id="crumb-product" aria-current="page"></li>
+      </ol>
+      <div id="product-root"></div>
+      <div class="empty" id="product-missing" hidden>
+        <h2>No encontramos este producto</h2>
+        <p>Es posible que la clave haya cambiado o ya no esté disponible.</p>
+        <a class="btn btn-dark btn-sm" href="catalogo.html">Ir al catálogo</a>
+      </div>
+    </div>
+    <section class="section section-white" id="related" hidden>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Complementa tu espacio</span>
+            <h2>También te puede interesar</h2>
+          </div>
+          <a class="link-arrow" id="related-more" href="catalogo.html"><span class="label">Ver catálogo</span> <svg aria-hidden="true"><use href="assets/img/icons.svg#arrow"></use></svg></a>
+        </div>
+        <div class="product-grid" id="related-grid"></div>
+      </div>
+    </section>
