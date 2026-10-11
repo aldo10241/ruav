@@ -39,7 +39,7 @@ CATEGORIES = [
     {"id": "mesas-asamblea", "match": "MESASDEASAMBLEACONBASESTIPOTOTEM", "name": "Mesas de asamblea",
      "blurb": "Mesas para sala de juntas con bases tipo tótem y paso de cableado, de 2.40 a 5.40 m."},
     {"id": "barras-altas", "match": "BARRASALTASTIPOGRAPA", "name": "Barras altas",
-     "blurb": "Barras autosoportantes de 1.10 m de altura y sus extensiones para espacios colaborativos."},
+     "blurb": "Barras autosoportantes 100 % desarmables de 1.10 m de altura y sus extensiones para espacios colaborativos."},
     {"id": "credenzas", "match": "CREDENZAS", "name": "Credenzas",
      "blurb": "Credenzas bajas y de altura escritorio con puertas, cajones y espacios abiertos."},
     {"id": "cubiertas", "match": "CUBIERTAS", "name": "Cubiertas",

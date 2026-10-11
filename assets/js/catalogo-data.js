@@ -16,7 +16,7 @@ window.RUAV_CATALOGO = Object.freeze({
   {
    "id": "barras-altas",
    "name": "Barras altas",
-   "blurb": "Barras autosoportantes de 1.10 m de altura y sus extensiones para espacios colaborativos.",
+   "blurb": "Barras autosoportantes 100 % desarmables de 1.10 m de altura y sus extensiones para espacios colaborativos.",
    "count": 60
   },
   {

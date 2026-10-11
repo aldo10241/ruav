@@ -705,7 +705,8 @@
     var features = [];
     var d = normalize(p.descripcion);
     if (d.indexOf("blum") > -1) features.push("Bisagras bidimensionales BLUM de cierre suave");
-    if (d.indexOf("desarmable") > -1) features.push("100 % desarmable: fácil de transportar e instalar");
+    // Solo los escritorios y barras tipo grapa son desarmables.
+    if (p.cat === "escritorios" || p.cat === "barras-altas") features.push("100 % desarmable: fácil de transportar e instalar");
     if (d.indexOf("cerradura") > -1) features.push("Incluye cerradura");
     if (d.indexOf("extension total") > -1) features.push("Correderas de extensión total");
     if (d.indexOf("nivelador") > -1) features.push("Niveladores para pisos irregulares");
