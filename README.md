@@ -49,6 +49,25 @@ Si aparece una clave con un prefijo nuevo, agrégalo al diccionario `TYPES` del 
 
 > ⚠️ El Excel **nunca** debe subirse al repositorio (está en `.gitignore`).
 
+### Sillería (desde el PDF del proveedor)
+
+```bash
+pip install pymupdf pillow
+python tools/build_sillas.py "ruta/Lista de precios Sillería.pdf"
+```
+
+Genera `assets/js/silleria-data.js` y `assets/img/sillas/`. Toma de cada modelo el nombre, la
+foto, las características y las tapicerías; **omite** precios, tiempos de embarque, garantías,
+piezas por caja, políticas de venta, datos bancarios, accesorios Sophia y las portadas de
+“nuevo producto”. Las categorías se asignan en el propio script (`category_of`).
+
+Requiere el archivo local **`tools/marcas_excluidas.txt`** (no se sube a GitHub) con las
+marcas del proveedor que deben eliminarse o sustituirse; el script se detiene si alguna queda
+en los datos. Si cambia el diseño del PDF (páginas, nombres no extraíbles), revisa
+`SKIP_PAGES` y `MISSING_NAMES` en el script.
+
+> ⚠️ El PDF **nunca** debe subirse al repositorio (está en `.gitignore`).
+
 ## 3. Editar páginas
 
 Modifica las plantillas en `tools/templates/` y ejecuta:

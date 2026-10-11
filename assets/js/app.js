@@ -17,13 +17,19 @@
 
   var CFG = window.RUAV_CONFIG || {};
   var DATA = window.RUAV_CATALOGO || { categorias: [], productos: [] };
-  var PRODUCTS = DATA.productos;
-  var CATS = DATA.categorias;
+  var SILLERIA = window.RUAV_SILLERIA || { categorias: [], productos: [] };
+  var PRODUCTS = DATA.productos.concat(SILLERIA.productos);
+  var CATS = DATA.categorias.map(function (c) { return Object.assign({ grupo: "mobiliario" }, c); }).concat(SILLERIA.categorias);
+  var GRUPOS = [
+    { id: "mobiliario", name: "Mobiliario", blurb: "Escritorios, mesas de juntas, credenzas, almacenamiento, lockers y más, en panel melamínico." },
+    { id: "silleria", name: "Sillería", blurb: "Sillas de oficina, visita y multiusos, bancos, sillones lounge y sofás. Elige tu modelo y tapicería y cotiza por WhatsApp." },
+  ];
   var BY_SKU = new Map(PRODUCTS.map(function (p) { return [p.sku, p]; }));
   var CAT_BY_ID = new Map(CATS.map(function (c) { return [c.id, c]; }));
+  var GRUPO_BY_ID = new Map(GRUPOS.map(function (g) { return [g.id, g]; }));
   var IMG_DIR = "assets/img/productos/";
   var ICONS = "assets/img/icons.svg#";
-  var SKU_RE = /^[A-Z0-9-]{6,24}$/;
+  var SKU_RE = /^[A-Z0-9-]{6,60}$/;
   var WA_NUMBER = /^\d{10,15}$/.test(CFG.whatsapp || "") ? CFG.whatsapp : "";
   var STORE_KEY = "ruav_cotizacion_v1";
   var MAX_QTY = 999;
@@ -104,7 +110,7 @@
   }
   function img(p, cls, eager) {
     return h("img", {
-      src: p.img ? IMG_DIR + p.img : "assets/img/logo-ruav.webp",
+      src: p.img ? (p.img.indexOf("/") > -1 ? "assets/img/" + p.img : IMG_DIR + p.img) : "assets/img/logo-ruav.webp",
       alt: p.nombre + " " + dimsShort(p),
       class: cls,
       loading: eager ? "eager" : "lazy",
@@ -123,11 +129,22 @@
     var base = WA_NUMBER ? "https://wa.me/" + WA_NUMBER : "https://wa.me/";
     return base + "?text=" + encodeURIComponent(text);
   }
+  function isSilla(p) { return !!p.familia; }
   function lineFor(p, qty) {
+    if (isSilla(p)) {
+      var cat = CAT_BY_ID.get(p.cat);
+      return "• " + p.nombre + " (" + (cat ? cat.name : "Sillería") + ") — Cantidad: " + qty;
+    }
     return "• " + p.nombre + " — Clave " + p.sku + (p.medidas ? " (" + dimsShort(p) + ")" : "") + " — Cantidad: " + qty;
   }
-  function singleMessage(p, qty) {
-    return "Hola RUAV, me gustaría cotizar:\n" + lineFor(p, qty || 1) + "\n\nLo vi en: " + absoluteUrl(productUrl(p));
+  function subtitle(p) { return isSilla(p) ? p.tipo : p.sku; }
+  // Imagen representativa de una categoría (definida en los datos o el primer producto).
+  function coverOf(c) {
+    return (c.portada && BY_SKU.get(c.portada)) || PRODUCTS.find(function (p) { return p.cat === c.id; });
+  }
+  function singleMessage(p, qty, extra) {
+    return "Hola RUAV, me gustaría cotizar:\n" + lineFor(p, qty || 1) + (extra ? "\n" + extra : "") +
+      "\n\nLo vi en: " + absoluteUrl(productUrl(p));
   }
   function waAnchor(text, label, cls) {
     return h("a", {
@@ -241,7 +258,7 @@
         img(p),
         h("div", null,
           h("a", { href: productUrl(p), text: p.nombre }),
-          h("div", { class: "pc-sku", text: p.sku + " · " + dimsShort(p) }),
+          h("div", { class: "pc-sku", text: isSilla(p) ? subtitle(p) : p.sku + " · " + dimsShort(p) }),
           h("div", { class: "quote-item-row" },
             qtyControl(it.qty, function (v) { Quote.set(p.sku, v); }, true),
             h("button", { type: "button", class: "remove-btn", text: "Quitar", "aria-label": "Quitar " + p.nombre + " " + p.sku,
@@ -331,13 +348,14 @@
   function productCard(p, showCat) {
     var cat = CAT_BY_ID.get(p.cat);
     return h("article", { class: "product-card" },
-      h("div", { class: "pc-img" }, img(p), showCat && cat ? h("span", { class: "pc-tag", text: cat.name }) : h("span", { class: "pc-tag", text: p.tipo })),
+      h("div", { class: isSilla(p) ? "pc-img pc-photo" : "pc-img" }, img(p), showCat && cat ? h("span", { class: "pc-tag", text: cat.name }) : h("span", { class: "pc-tag", text: p.tipo })),
       h("div", { class: "pc-body" },
-        h("span", { class: "pc-sku", text: p.sku }),
+        h("span", { class: "pc-sku", text: subtitle(p) }),
         h("h3", { class: "pc-title" }, h("a", { href: productUrl(p), text: p.nombre })),
         p.medidas ? h("dl", { class: "pc-dims" }, dimLabels(p).map(function (d) {
           return h("div", null, h("dt", { text: d[0] }), h("dd", { text: fmtLen(d[1]) }));
         })) : null,
+        isSilla(p) && p.caracteristicas.length ? h("p", { class: "pc-feat", text: p.caracteristicas[0] }) : null,
         h("div", { class: "pc-actions" },
           addButton(p),
           waAnchor(singleMessage(p, 1), "Cotizar " + p.nombre + " por WhatsApp", "btn btn-wa icon-only"))));
@@ -379,11 +397,14 @@
     }
     if (drop) {
       var mega = $(".mega", drop);
-      CATS.forEach(function (c) {
-        var first = PRODUCTS.find(function (p) { return p.cat === c.id; });
-        mega.appendChild(h("a", { href: catalogUrl({ cat: c.id }) },
-          first ? img(first) : null,
-          h("span", null, h("strong", { text: c.name }), h("small", { text: c.count + " modelos" }))));
+      GRUPOS.forEach(function (g) {
+        mega.appendChild(h("a", { class: "mega-group", href: catalogUrl({ grupo: g.id }) }, g.name, icon("arrow")));
+        CATS.filter(function (c) { return c.grupo === g.id; }).forEach(function (c) {
+          var first = coverOf(c);
+          mega.appendChild(h("a", { href: catalogUrl({ cat: c.id }) },
+            first ? img(first) : null,
+            h("span", null, h("strong", { text: c.name }), h("small", { text: c.count + " modelos" }))));
+        });
       });
       mega.appendChild(h("a", { class: "mega-all", href: "catalogo.html", text: "Ver todo el catálogo (" + PRODUCTS.length + " productos)" }));
       var btn = $("button", drop);
@@ -426,27 +447,28 @@
   /* ---------------- Página: inicio ---------------- */
 
   function initHome() {
-    var grid = $("#cat-grid");
-    if (grid) {
-      CATS.forEach(function (c) {
-        var first = PRODUCTS.find(function (p) { return p.cat === c.id; });
+    $all("[data-cat-grid]").forEach(function (grid) {
+      var grupo = grid.getAttribute("data-cat-grid");
+      CATS.filter(function (c) { return c.grupo === grupo; }).forEach(function (c) {
+        var first = coverOf(c);
         grid.appendChild(h("a", { class: "cat-card", href: catalogUrl({ cat: c.id }) },
           h("div", { class: "cat-img" }, first ? img(first) : null),
           h("strong", { text: c.name }),
           h("span", { text: c.count + " modelos" })));
       });
-    }
+    });
     $all("[data-stat='productos']").forEach(function (el) { el.textContent = String(PRODUCTS.length); });
     $all("[data-stat='categorias']").forEach(function (el) { el.textContent = String(CATS.length); });
 
     var tabs = $("#featured-tabs"), out = $("#featured-grid");
     if (!tabs || !out) return;
-    var picks = ["escritorios", "mesas-asamblea", "credenzas", "almacenamiento", "lockers", "barras-altas"];
+    var picks = ["escritorios", "sillas-oficina", "mesas-asamblea", "credenzas", "sillones-lounge", "almacenamiento", "lockers", "barras-altas"];
     function featured(catId) {
       var seen = new Set();
       return PRODUCTS.filter(function (p) {
-        if (p.cat !== catId || seen.has(p.nombre)) return false;
-        seen.add(p.nombre);
+        var key = p.familia || p.nombre;
+        if (p.cat !== catId || seen.has(key)) return false;
+        seen.add(key);
         return true;
       }).concat(PRODUCTS.filter(function (p) { return p.cat === catId; })).filter(function (p, i, arr) {
         return arr.indexOf(p) === i;
@@ -494,12 +516,13 @@
     var params = new URLSearchParams(location.search);
     var state = {
       cat: CAT_BY_ID.has(params.get("cat")) ? params.get("cat") : "",
+      grupo: GRUPO_BY_ID.has(params.get("grupo")) ? params.get("grupo") : "",
       tipos: (params.get("tipo") || "").split("|").map(function (t) { return cleanInput(t, 60); }).filter(Boolean),
       frente: /^\d{2,5}$/.test(params.get("frente") || "") ? params.get("frente") : "",
       fondo: /^\d{2,5}$/.test(params.get("fondo") || "") ? params.get("fondo") : "",
       alto: /^\d{2,5}$/.test(params.get("alto") || "") ? params.get("alto") : "",
       q: cleanInput(params.get("q"), 80),
-      orden: ["", "frente-asc", "frente-desc", "clave"].indexOf(params.get("orden")) > 0 ? params.get("orden") : "",
+      orden: ["", "frente-asc", "frente-desc", "nombre", "clave"].indexOf(params.get("orden")) > 0 ? params.get("orden") : "",
       shown: PAGE,
     };
 
@@ -509,7 +532,11 @@
     var headerQ = $(".header-search input");
     if (headerQ) headerQ.value = state.q;
 
-    function inCat() { return state.cat ? PRODUCTS.filter(function (p) { return p.cat === state.cat; }) : PRODUCTS; }
+    function inCat() {
+      if (state.cat) return PRODUCTS.filter(function (p) { return p.cat === state.cat; });
+      if (state.grupo) return PRODUCTS.filter(function (p) { return CAT_BY_ID.get(p.cat).grupo === state.grupo; });
+      return PRODUCTS;
+    }
     function matches(p) {
       if (state.tipos.length && state.tipos.indexOf(p.tipo) === -1) return false;
       if (state.frente && (!p.medidas || String(p.medidas.frente) !== state.frente)) return false;
@@ -517,7 +544,8 @@
       if (state.alto && (!p.medidas || String(p.medidas.alto) !== state.alto)) return false;
       if (state.q) {
         var cat = CAT_BY_ID.get(p.cat);
-        var hay = normalize([p.nombre, p.sku, p.tipo, p.descripcion, cat ? cat.name : "", dimsShort(p)].join(" "));
+        var hay = normalize([p.nombre, p.sku, p.tipo, p.descripcion, cat ? cat.name : "", dimsShort(p),
+          (p.tapices || []).join(" "), (p.versiones || []).join(" ")].join(" "));
         var ok = normalize(state.q).split(/\s+/).every(function (t) { return hay.indexOf(t) > -1; });
         if (!ok) return false;
       }
@@ -528,6 +556,7 @@
       if (!s) return list;
       var copy = list.slice();
       if (s === "clave") copy.sort(function (a, b) { return a.sku.localeCompare(b.sku); });
+      else if (s === "nombre") copy.sort(function (a, b) { return a.nombre.localeCompare(b.nombre, "es"); });
       else copy.sort(function (a, b) {
         var d = ((a.medidas || {}).frente || 0) - ((b.medidas || {}).frente || 0);
         if (!d) d = ((a.medidas || {}).fondo || 0) - ((b.medidas || {}).fondo || 0);
@@ -539,14 +568,15 @@
     function syncUrl() {
       var p = new URLSearchParams();
       if (state.cat) p.set("cat", state.cat);
+      else if (state.grupo) p.set("grupo", state.grupo);
       if (state.tipos.length) p.set("tipo", state.tipos.join("|"));
       ["frente", "fondo", "alto", "q", "orden"].forEach(function (k) { if (state[k]) p.set(k, state[k]); });
       var qs = p.toString();
       history.replaceState(null, "", location.pathname + (qs ? "?" + qs : ""));
     }
 
-    function radio(name, value, label, count, checked, onChange) {
-      return h("li", null, h("label", null,
+    function radio(name, value, label, count, checked, onChange, cls) {
+      return h("li", { class: cls }, h("label", null,
         h("input", { type: name === "tipo" ? "checkbox" : "radio", name: name, value: value, checked: checked, onchange: onChange }),
         h("span", { text: label }), h("span", { class: "count", text: String(count) })));
     }
@@ -554,9 +584,15 @@
     function renderFilters() {
       var catList = $("#f-cat");
       clear(catList);
-      catList.appendChild(radio("cat", "", "Todas las categorías", PRODUCTS.length, !state.cat, function () { setCat(""); }));
-      CATS.forEach(function (c) {
-        catList.appendChild(radio("cat", c.id, c.name, c.count, state.cat === c.id, function () { setCat(c.id); }));
+      catList.appendChild(radio("cat", "", "Todo el catálogo", PRODUCTS.length, !state.cat && !state.grupo, function () { setCat("", ""); }));
+      GRUPOS.forEach(function (g) {
+        var cats = CATS.filter(function (c) { return c.grupo === g.id; });
+        var total = cats.reduce(function (a, c) { return a + c.count; }, 0);
+        catList.appendChild(radio("cat", "grupo:" + g.id, g.name, total, !state.cat && state.grupo === g.id,
+          function () { setCat("", g.id); }, "filter-group-head"));
+        cats.forEach(function (c) {
+          catList.appendChild(radio("cat", c.id, c.name, c.count, state.cat === c.id, function () { setCat(c.id); }, "filter-sub"));
+        });
       });
 
       var base = inCat();
@@ -585,21 +621,23 @@
         sel.appendChild(h("option", { value: "", text: "Todas" }));
         vals.forEach(function (v) { sel.appendChild(h("option", { value: String(v), text: fmtLen(v), selected: String(v) === state[k] })); });
       });
+      $("#g-medidas").hidden = !base.some(function (p) { return p.medidas; });
       var altoLabel = $("#l-alto");
       if (altoLabel) altoLabel.textContent = state.cat === "cubiertas" ? "Grosor" : "Alto";
     }
 
-    function setCat(id) {
+    function setCat(id, grupo) {
       state.cat = id;
+      state.grupo = id ? CAT_BY_ID.get(id).grupo : (grupo || "");
       state.tipos = [];
       state.frente = state.fondo = state.alto = "";
       update(true);
     }
 
     function renderHead() {
-      var c = CAT_BY_ID.get(state.cat);
-      $("#cat-title").textContent = c ? c.name : "Catálogo de mobiliario";
-      $("#cat-blurb").textContent = c ? c.blurb : "Mobiliario de oficina en panel melamínico: escritorios, mesas de juntas, credenzas, almacenamiento, lockers y más. Agrega productos a tu lista y envía tu cotización por WhatsApp.";
+      var c = CAT_BY_ID.get(state.cat) || GRUPO_BY_ID.get(state.grupo);
+      $("#cat-title").textContent = c ? c.name : "Catálogo";
+      $("#cat-blurb").textContent = c ? c.blurb : "Mobiliario de oficina y sillería: escritorios, mesas de juntas, credenzas, almacenamiento, lockers, sillas, sillones y sofás. Agrega productos a tu lista y envía tu cotización por WhatsApp.";
       var crumb = $("#crumb-cat");
       crumb.hidden = !c;
       crumb.textContent = c ? c.name : "";
@@ -684,7 +722,7 @@
       return;
     }
     var cat = CAT_BY_ID.get(p.cat);
-    document.title = p.nombre + " " + dimsShort(p) + " | RUAV Mobiliario";
+    document.title = (p.nombre + " " + dimsShort(p)).trim() + " | RUAV Mobiliario";
     var canonical = (/^https:\/\/[^\s"'<>]+$/.test(CFG.sitioUrl || "") ? CFG.sitioUrl.replace(/\/$/, "") : location.origin) + "/" + productUrl(p);
     document.head.appendChild(h("link", { rel: "canonical", href: canonical }));
     var meta = $("meta[name='description']");
@@ -694,16 +732,29 @@
     catLink.href = catalogUrl({ cat: cat.id });
     $("#crumb-product").textContent = p.nombre;
 
-    var variants = PRODUCTS.filter(function (x) { return x.cat === p.cat && x.nombre === p.nombre; }).sort(function (a, b) {
-      var A = a.medidas || {}, B = b.medidas || {};
-      return (A.fondo - B.fondo) || (A.frente - B.frente) || (A.alto - B.alto) || 0;
-    });
-    var qtyVal = 1;
+    var silla = isSilla(p);
+    var variants = silla
+      ? PRODUCTS.filter(function (x) { return x.familia === p.familia; })
+      : PRODUCTS.filter(function (x) { return x.cat === p.cat && x.nombre === p.nombre; }).sort(function (a, b) {
+        var A = a.medidas || {}, B = b.medidas || {};
+        return (A.fondo - B.fondo) || (A.frente - B.frente) || (A.alto - B.alto) || 0;
+      });
+    function variantLabel(v) {
+      if (!silla) return v.medidas ? [v.medidas.frente, v.medidas.fondo, v.medidas.alto].map(function (n) { return n < 100 ? n + "mm" : (n / 1000).toFixed(2); }).join(" × ") : v.sku;
+      var rest = v.nombre.slice(p.familia.length).replace(/^[\s·-]+/, "");
+      return rest || "Estándar";
+    }
+    var qtyVal = 1, tapizVal = "";
     var waBtn = waAnchor(singleMessage(p, 1), "Cotizar por WhatsApp", "btn btn-wa btn-block");
-    var qty = qtyControl(1, function (v) { qtyVal = v; waBtn.href = waLink(singleMessage(p, v)); });
+    function refreshWa() { waBtn.href = waLink(singleMessage(p, qtyVal, tapizVal ? "Tapicería de interés: " + tapizVal : "")); }
+    var qty = qtyControl(1, function (v) { qtyVal = v; refreshWa(); });
+    var tapizSelect = silla && p.tapices.length ? h("label", { class: "tapiz-select" }, "Tapicería de interés (opcional)",
+      h("select", { class: "field", onchange: function (e) { tapizVal = p.tapices.indexOf(e.target.value) > -1 ? e.target.value : ""; refreshWa(); } },
+        h("option", { value: "", text: "Aún no lo sé / quiero asesoría" }),
+        p.tapices.map(function (t) { return h("option", { value: t, text: t }); }))) : null;
 
-    var features = [];
-    var d = normalize(p.descripcion);
+    var features = silla ? p.caracteristicas.slice() : [];
+    var d = silla ? "" : normalize(p.descripcion);
     if (d.indexOf("blum") > -1) features.push("Bisagras bidimensionales BLUM de cierre suave");
     // Solo los escritorios y barras tipo grapa son desarmables.
     if (p.cat === "escritorios" || p.cat === "barras-altas") features.push("100 % desarmable: fácil de transportar e instalar");
@@ -720,7 +771,7 @@
       h("div", { class: "product-info" },
         h("span", { class: "eyebrow", text: cat.name }),
         h("h1", { text: p.nombre }),
-        h("div", { class: "pc-sku" }, "Clave: " + p.sku,
+        silla ? h("div", { class: "pc-sku", text: p.tipo }) : h("div", { class: "pc-sku" }, "Clave: " + p.sku,
           h("button", { type: "button", class: "copy-btn", text: "Copiar", onclick: function (e) {
             var b = e.currentTarget;
             if (navigator.clipboard) navigator.clipboard.writeText(p.sku).then(function () { b.textContent = "Copiada"; }, function () {});
@@ -730,25 +781,32 @@
           return h("div", null, h("small", { text: x[0] }), h("strong", null, parts[0], h("span", { text: parts[1] })));
         })) : null,
         variants.length > 1 ? h("div", { class: "variant-block" },
-          h("h2", { text: "Medidas disponibles (" + variants.length + ")" }),
+          h("h2", { text: (silla ? "Versiones de " + p.familia : "Medidas disponibles") + " (" + variants.length + ")" }),
           h("div", { class: "variants" }, variants.map(function (v) {
-            return h("a", { href: productUrl(v), "aria-current": v.sku === p.sku ? "true" : null,
-              text: v.medidas ? [v.medidas.frente, v.medidas.fondo, v.medidas.alto].map(function (n) { return n < 100 ? n + "mm" : (n / 1000).toFixed(2); }).join(" × ") : v.sku });
+            return h("a", { href: productUrl(v), "aria-current": v.sku === p.sku ? "true" : null, text: variantLabel(v) });
           }))) : null,
         h("div", { class: "buy-box" },
+          tapizSelect,
           h("div", { class: "buy-row" }, qty, addButton(p, { cls: "btn btn-dark btn-add", label: "Agregar a cotización", added: "Agregar más", qty: function () { return qtyVal; } })),
           waBtn,
-          h("p", { class: "buy-note" }, icon("wa"), "Te respondemos por WhatsApp con precio, acabados disponibles y tiempo de entrega.")),
+          h("p", { class: "buy-note" }, icon("wa"), silla
+            ? "Te respondemos por WhatsApp con precio, muestrario de tapices y tiempo de entrega."
+            : "Te respondemos por WhatsApp con precio, acabados disponibles y tiempo de entrega.")),
         h("div", { class: "spec" },
-          h("h2", { text: "Descripción" }),
-          h("p", { text: p.descripcion }),
+          silla ? null : h("h2", { text: "Descripción" }),
+          silla ? null : h("p", { text: p.descripcion }),
           features.length ? h("h2", { text: "Características" }) : null,
-          features.length ? h("ul", null, features.map(function (f) { return h("li", { text: f }); })) : null)));
+          features.length ? h("ul", null, features.map(function (f) { return h("li", { text: f }); })) : null,
+          silla && p.versiones.length ? h("h2", { text: "Opciones" }) : null,
+          silla && p.versiones.length ? h("ul", null, p.versiones.map(function (f) { return h("li", { text: f }); })) : null,
+          silla && p.tapices.length ? h("h2", { text: "Tapicerías y colores" }) : null,
+          silla && p.tapices.length ? h("ul", { class: "tapices" }, p.tapices.map(function (f) { return h("li", { text: f }); })) : null)));
     root.appendChild(product);
 
-    var related = PRODUCTS.filter(function (x) { return x.cat === p.cat && x.nombre !== p.nombre; });
+    var groupKey = function (x) { return x.familia || x.nombre; };
+    var related = PRODUCTS.filter(function (x) { return x.cat === p.cat && groupKey(x) !== groupKey(p); });
     var seen = new Set();
-    related = related.filter(function (x) { if (seen.has(x.nombre)) return false; seen.add(x.nombre); return true; }).slice(0, 4);
+    related = related.filter(function (x) { if (seen.has(groupKey(x))) return false; seen.add(groupKey(x)); return true; }).slice(0, 4);
     if (related.length < 4) {
       related = related.concat(PRODUCTS.filter(function (x) { return x.cat !== p.cat && x.sku === PRODUCTS.find(function (y) { return y.cat === x.cat; }).sku; }).slice(0, 4 - related.length));
     }

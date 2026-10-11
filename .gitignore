@@ -11,3 +11,6 @@ Thumbs.db
 
 # Configuración local del editor/IA
 .claude/
+
+# Marcas del proveedor (se usan para filtrarlas del sitio; no deben publicarse)
+tools/marcas_excluidas.txt
