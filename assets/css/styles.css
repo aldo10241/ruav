@@ -613,3 +613,31 @@ textarea.field { height: auto; min-height: 84px; padding: 10px 12px; resize: ver
 .product-info > .pc-sku { margin-bottom: 18px; }
 .product-info > .pc-sku + .variant-block { margin-top: 4px; }
 .product-card .pc-img.pc-photo { padding: 10px; }
+
+/* ---------- Acabados ---------- */
+.stock-note {
+  margin: 0; font-size: 13px; line-height: 1.45; color: #6b4e12; background: #fff6e5;
+  border: 1px solid #f0d9a8; border-radius: 8px; padding: 8px 12px;
+}
+.stock-note-lg { font-size: 14.5px; padding: 12px 16px; margin-bottom: 28px; }
+.finish-picker { display: grid; gap: 10px; }
+.finish-head { font-size: 14px; color: var(--muted); }
+.finish-head strong { color: var(--text); }
+.finish-group small { display: block; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 6px; }
+.swatch { display: grid; gap: 6px; justify-items: center; text-align: center; }
+.swatch img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); }
+.swatches .swatch { width: 40px; }
+.swatches .swatch span { display: none; }
+button.swatch { padding: 2px; border: 2px solid transparent; border-radius: 9px; background: transparent; }
+button.swatch:hover { border-color: var(--muted-light); }
+button.swatch[aria-checked="true"] { border-color: var(--red); }
+.swatches-lg { gap: 18px; }
+.swatches-lg .swatch { width: calc((100% - 18px * 7) / 8); }
+.swatches-lg .swatch span { display: block; font-size: 13.5px; color: var(--text); }
+#acabados-grid { display: grid; gap: 28px; }
+#acabados-grid h3 { font-size: 16px; margin-bottom: 12px; }
+.quote-opt { font-size: 12.5px; color: var(--text); margin-top: 2px; }
+.drawer-foot .stock-note { font-size: 12px; }
+@media (max-width: 980px) { .swatches-lg .swatch { width: calc((100% - 18px * 4) / 5); } }
+@media (max-width: 600px) { .swatches-lg { gap: 12px; } .swatches-lg .swatch { width: calc((100% - 12px * 3) / 4); } .swatches-lg .swatch span { font-size: 12px; } }

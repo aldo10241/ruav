@@ -23,6 +23,7 @@
   <script src="assets/js/config.js" defer></script>
   <script src="assets/js/catalogo-data.js" defer></script>
   <script src="assets/js/silleria-data.js" defer></script>
+  <script src="assets/js/acabados-data.js" defer></script>
   <script src="assets/js/app.js" defer></script>
 </head>
 <body>
@@ -144,7 +145,21 @@
       </div>
     </section>
 
-    <section class="section section-white" id="como-cotizar">
+    <section class="section section-white" id="acabados">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Acabados</span>
+            <h2>Elige el acabado de tu mobiliario</h2>
+            <p>Maderas, lisos y texturas en melamina para todos nuestros muebles. Indícanos el acabado al cotizar.</p>
+          </div>
+        </div>
+        <p class="stock-note stock-note-lg">Sujeto a existencias: no todos los acabados se fabrican en todos los espesores (19 y 28 mm). Confirmamos disponibilidad al cotizar.</p>
+        <div id="acabados-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="como-cotizar">
       <div class="container">
         <div class="section-head">
           <div>
@@ -161,7 +176,7 @@
       </div>
     </section>
 
-    <section class="section" id="proyectos">
+    <section class="section section-white" id="proyectos">
       <div class="container">
         <div class="split">
           <div class="split-copy">
@@ -182,7 +197,7 @@
       </div>
     </section>
 
-    <section class="section section-white">
+    <section class="section">
       <div class="container">
         <div class="section-head">
           <div>
@@ -198,7 +213,7 @@
       </div>
     </section>
 
-    <section class="section" id="contacto">
+    <section class="section section-white" id="contacto">
       <div class="container contact">
         <div>
           <span class="eyebrow">Contacto</span>
@@ -237,6 +252,7 @@
       <div>
         <h3>RUAV</h3>
         <ul>
+          <li><a href="index.html#acabados">Acabados</a></li>
           <li><a href="index.html#como-cotizar">Cómo cotizar</a></li>
           <li><a href="index.html#proyectos">Proyectos para empresas</a></li>
           <li><a href="index.html#contacto">Contacto</a></li>
@@ -293,6 +309,7 @@
       <button class="btn btn-wa btn-block" type="submit" form="quote-form">
         <svg aria-hidden="true"><use href="assets/img/icons.svg#wa"></use></svg> Enviar cotización por WhatsApp
       </button>
+      <p class="stock-note">Precios, existencias y espesores se confirman en la cotización: no todos los acabados se fabrican en todos los espesores.</p>
       <button class="remove-btn" type="button" data-clear-quote>Vaciar lista</button>
       <p class="privacy-note">Tus datos no se guardan en este sitio; solo se incluyen en el mensaje que tú envías. <a href="aviso-de-privacidad.html">Aviso de privacidad</a></p>
     </div>
