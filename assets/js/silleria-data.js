@@ -69,6 +69,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh / Tela de importación"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh / Tela de importación",
+     "precio": 3590
+    }
+   ],
+   "desde": 3590,
    "img": "sillas/ekho-black.webp"
   },
   {
@@ -89,6 +96,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh / Tela de importación"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh / Tela de importación",
+     "precio": 4015
+    }
+   ],
+   "desde": 4015,
    "img": "sillas/ekho-gray.webp"
   },
   {
@@ -113,6 +127,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación / Malla de importación negra"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación / Malla de importación negra",
+     "precio": 6075
+    }
+   ],
+   "desde": 6075,
    "img": "sillas/soul-express-black-respaldo-alto.webp"
   },
   {
@@ -136,6 +157,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación / Malla de importación negra"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación / Malla de importación negra",
+     "precio": 5605
+    }
+   ],
+   "desde": 5605,
    "img": "sillas/soul-express-black-respaldo-bajo.webp"
   },
   {
@@ -160,6 +188,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación / Malla de importación gris"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación / Malla de importación gris",
+     "precio": 6695
+    }
+   ],
+   "desde": 6695,
    "img": "sillas/soul-express-white-respaldo-alto.webp"
   },
   {
@@ -183,6 +218,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación / Malla de importación gris"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación / Malla de importación gris",
+     "precio": 6155
+    }
+   ],
+   "desde": 6155,
    "img": "sillas/soul-express-white-respaldo-bajo.webp"
   },
   {
@@ -205,6 +247,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Malla de importación / Tela de importación Negra",
     "Malla de importación / Tela de importación Gris"
    ],
+   "precios": [
+    {
+     "opcion": "Malla de importación / Tela de importación Negra",
+     "precio": 2475
+    },
+    {
+     "opcion": "Malla de importación / Tela de importación Gris",
+     "precio": 2625
+    }
+   ],
+   "desde": 2475,
    "img": "sillas/journey-respaldo-alto.webp"
   },
   {
@@ -226,6 +279,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Malla de importación / Tela de importación Negra",
     "Malla de importación / Tela de importación Gris"
    ],
+   "precios": [
+    {
+     "opcion": "Malla de importación / Tela de importación Negra",
+     "precio": 1995
+    },
+    {
+     "opcion": "Malla de importación / Tela de importación Gris",
+     "precio": 2170
+    }
+   ],
+   "desde": 1995,
    "img": "sillas/journey-respaldo-bajo.webp"
   },
   {
@@ -248,6 +312,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Malla de importación / Tela de importación Negra"
    ],
+   "precios": [
+    {
+     "opcion": "Malla de importación / Tela de importación Negra",
+     "precio": 2990
+    }
+   ],
+   "desde": 2990,
    "img": "sillas/pilot-black-respaldo-alto.webp"
   },
   {
@@ -269,6 +340,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Malla de importación / Tela de importación Negra"
    ],
+   "precios": [
+    {
+     "opcion": "Malla de importación / Tela de importación Negra",
+     "precio": 2770
+    }
+   ],
+   "desde": 2770,
    "img": "sillas/pilot-black-respaldo-bajo.webp"
   },
   {
@@ -291,6 +369,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Malla de importación / Tela de importación Gris"
    ],
+   "precios": [
+    {
+     "opcion": "Malla de importación / Tela de importación Gris",
+     "precio": 3510
+    }
+   ],
+   "desde": 3510,
    "img": "sillas/pilot-white-respaldo-alto.webp"
   },
   {
@@ -312,6 +397,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Malla de importación / Tela de importación Gris"
    ],
+   "precios": [
+    {
+     "opcion": "Malla de importación / Tela de importación Gris",
+     "precio": 3215
+    }
+   ],
+   "desde": 3215,
    "img": "sillas/pilot-white-respaldo-bajo.webp"
   },
   {
@@ -334,6 +426,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "NeoMesh Gris"
    ],
+   "precios": [
+    {
+     "opcion": "NeoMesh Gris",
+     "precio": 6970
+    }
+   ],
+   "desde": 6970,
    "img": "sillas/royal-white-respaldo-alto.webp"
   },
   {
@@ -355,6 +454,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "NeoMesh Gris"
    ],
+   "precios": [
+    {
+     "opcion": "NeoMesh Gris",
+     "precio": 6485
+    }
+   ],
+   "desde": 6485,
    "img": "sillas/royal-white-respaldo-bajo.webp"
   },
   {
@@ -377,6 +483,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "NeoMesh Gris"
    ],
+   "precios": [
+    {
+     "opcion": "NeoMesh Gris",
+     "precio": 6215
+    }
+   ],
+   "desde": 6215,
    "img": "sillas/royal-black-respaldo-alto.webp"
   },
   {
@@ -398,6 +511,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "NeoMesh Gris"
    ],
+   "precios": [
+    {
+     "opcion": "NeoMesh Gris",
+     "precio": 5790
+    }
+   ],
+   "desde": 5790,
    "img": "sillas/royal-black-respaldo-bajo.webp"
   },
   {
@@ -420,6 +540,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Smartmesh de importación negro",
     "Smartmesh de importación gris"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación negro",
+     "precio": 2995
+    },
+    {
+     "opcion": "Smartmesh de importación gris",
+     "precio": 3825
+    }
+   ],
+   "desde": 2995,
    "img": "sillas/sonic.webp"
   },
   {
@@ -440,6 +571,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Piel sintética de importación, Taupe o Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Piel sintética de importación, Taupe o Negro",
+     "precio": 4835
+    }
+   ],
+   "desde": 4835,
    "img": "sillas/bond-respaldo-alto.webp"
   },
   {
@@ -460,6 +598,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Piel sintética de importación, Taupe o Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Piel sintética de importación, Taupe o Negro",
+     "precio": 4685
+    }
+   ],
+   "desde": 4685,
    "img": "sillas/bond-respaldo-bajo.webp"
   },
   {
@@ -482,6 +627,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación, Smartmesh de importación"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación, Smartmesh de importación",
+     "precio": 6960
+    }
+   ],
+   "desde": 6960,
    "img": "sillas/energy-white-respaldo-alto.webp"
   },
   {
@@ -503,6 +655,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación, Smartmesh de importación"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación, Smartmesh de importación",
+     "precio": 6405
+    }
+   ],
+   "desde": 6405,
    "img": "sillas/energy-white-respaldo-bajo.webp"
   },
   {
@@ -525,6 +684,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación, Smartmesh de importación"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación, Smartmesh de importación",
+     "precio": 6355
+    }
+   ],
+   "desde": 6355,
    "img": "sillas/energy-black-respaldo-alto.webp"
   },
   {
@@ -546,6 +712,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación, Smartmesh de importación"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación, Smartmesh de importación",
+     "precio": 5870
+    }
+   ],
+   "desde": 5870,
    "img": "sillas/energy-black-respaldo-bajo.webp"
   },
   {
@@ -569,6 +742,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Piel sintética de importación, Negro / Camello",
     "Piel sintética de importación, Beige"
    ],
+   "precios": [
+    {
+     "opcion": "Piel sintética de importación, Negro / Camello",
+     "precio": 4815
+    },
+    {
+     "opcion": "Piel sintética de importación, Beige",
+     "precio": 5230
+    }
+   ],
+   "desde": 4815,
    "img": "sillas/class-respaldo-alto.webp"
   },
   {
@@ -591,6 +775,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Piel sintética de importación, Negro / Camello",
     "Piel sintética de importación, Beige"
    ],
+   "precios": [
+    {
+     "opcion": "Piel sintética de importación, Negro / Camello",
+     "precio": 3995
+    },
+    {
+     "opcion": "Piel sintética de importación, Beige",
+     "precio": 4440
+    }
+   ],
+   "desde": 3995,
    "img": "sillas/class-respaldo-bajo.webp"
   },
   {
@@ -615,6 +810,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Smartmesh de Importación Gris",
     "Smartmesh de Importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de Importación Gris",
+     "precio": 15880
+    },
+    {
+     "opcion": "Smartmesh de Importación Negro",
+     "precio": 15330
+    }
+   ],
+   "desde": 15330,
    "img": "sillas/advance-respaldo-alto.webp"
   },
   {
@@ -638,6 +844,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Smartmesh de Importación Gris",
     "Smartmesh de Importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de Importación Gris",
+     "precio": 14785
+    },
+    {
+     "opcion": "Smartmesh de Importación Negro",
+     "precio": 14360
+    }
+   ],
+   "desde": 14360,
    "img": "sillas/advance-respaldo-bajo.webp"
   },
   {
@@ -662,6 +879,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 11815
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 11900
+    }
+   ],
+   "desde": 11815,
    "img": "sillas/legend-respaldo-alto.webp"
   },
   {
@@ -685,6 +913,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 10725
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 10810
+    }
+   ],
+   "desde": 10725,
    "img": "sillas/legend-respaldo-bajo.webp"
   },
   {
@@ -709,6 +948,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 11815
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 11900
+    }
+   ],
+   "desde": 11815,
    "img": "sillas/legend-onix-respaldo-alto.webp"
   },
   {
@@ -732,6 +982,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 10725
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 10810
+    }
+   ],
+   "desde": 10725,
    "img": "sillas/legend-onix-respaldo-bajo.webp"
   },
   {
@@ -754,6 +1015,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de Importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de Importación Negro",
+     "precio": 9025
+    }
+   ],
+   "desde": 9025,
    "img": "sillas/access-respaldo-alto.webp"
   },
   {
@@ -775,6 +1043,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de Importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de Importación Negro",
+     "precio": 8270
+    }
+   ],
+   "desde": 8270,
    "img": "sillas/access-respaldo-bajo.webp"
   },
   {
@@ -800,6 +1075,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 8650
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 8725
+    }
+   ],
+   "desde": 8650,
    "img": "sillas/omega-respaldo-alto.webp"
   },
   {
@@ -824,6 +1110,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 8195
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 8275
+    }
+   ],
+   "desde": 8195,
    "img": "sillas/omega-respaldo-bajo.webp"
   },
   {
@@ -844,6 +1141,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Piel genuina de Importación, Taupe o Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Piel genuina de Importación, Taupe o Negro",
+     "precio": 13130
+    }
+   ],
+   "desde": 13130,
    "img": "sillas/dream-respaldo-alto.webp"
   },
   {
@@ -864,6 +1168,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Piel genuina de Importación, Taupe o Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Piel genuina de Importación, Taupe o Negro",
+     "precio": 11520
+    }
+   ],
+   "desde": 11520,
    "img": "sillas/dream-respaldo-bajo.webp"
   },
   {
@@ -888,6 +1199,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 7440
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 7510
+    }
+   ],
+   "desde": 7440,
    "img": "sillas/soul-white-respaldo-alto.webp"
   },
   {
@@ -911,6 +1233,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 6980
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 7045
+    }
+   ],
+   "desde": 6980,
    "img": "sillas/soul-white-respaldo-bajo.webp"
   },
   {
@@ -935,6 +1268,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 6665
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 6730
+    }
+   ],
+   "desde": 6665,
    "img": "sillas/soul-black-respaldo-alto.webp"
   },
   {
@@ -958,6 +1302,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 6275
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 6345
+    }
+   ],
+   "desde": 6275,
    "img": "sillas/soul-black-respaldo-bajo.webp"
   },
   {
@@ -981,6 +1336,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 6675
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 6745
+    }
+   ],
+   "desde": 6675,
    "img": "sillas/spirit-white-respaldo-alto.webp"
   },
   {
@@ -1003,6 +1369,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 6180
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 6245
+    }
+   ],
+   "desde": 6180,
    "img": "sillas/spirit-white-respaldo-bajo.webp"
   },
   {
@@ -1026,6 +1403,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 5905
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 5975
+    }
+   ],
+   "desde": 5905,
    "img": "sillas/spirit-black-respaldo-alto.webp"
   },
   {
@@ -1048,6 +1436,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 5485
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 5550
+    }
+   ],
+   "desde": 5485,
    "img": "sillas/spirit-black-respaldo-bajo.webp"
   },
   {
@@ -1070,6 +1469,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación, Piel sintética de importación, Tela de importación"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación, Piel sintética de importación, Tela de importación",
+     "precio": 5680
+    }
+   ],
+   "desde": 5680,
    "img": "sillas/spirit-express-white-respaldo-alto.webp"
   },
   {
@@ -1091,6 +1497,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación, Tela de importación"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación, Tela de importación",
+     "precio": 5125
+    }
+   ],
+   "desde": 5125,
    "img": "sillas/spirit-express-white-respaldo-bajo.webp"
   },
   {
@@ -1113,6 +1526,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación, Tela de importación"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación, Tela de importación",
+     "precio": 4895
+    }
+   ],
+   "desde": 4895,
    "img": "sillas/spirit-express-black-respaldo-alto.webp"
   },
   {
@@ -1134,6 +1554,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación, Tela de importación"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación, Tela de importación",
+     "precio": 4415
+    }
+   ],
+   "desde": 4415,
    "img": "sillas/spirit-express-black-respaldo-bajo.webp"
   },
   {
@@ -1156,6 +1583,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Piel genuina de importación, Negro",
     "Piel genuina de importación, Camello"
    ],
+   "precios": [
+    {
+     "opcion": "Piel genuina de importación, Negro",
+     "precio": 10255
+    },
+    {
+     "opcion": "Piel genuina de importación, Camello",
+     "precio": 11310
+    }
+   ],
+   "desde": 10255,
    "img": "sillas/ceo-respaldo-alto.webp"
   },
   {
@@ -1178,6 +1616,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Piel genuina de importación, Negro",
     "Piel genuina de importación, Camello"
    ],
+   "precios": [
+    {
+     "opcion": "Piel genuina de importación, Negro",
+     "precio": 9345
+    },
+    {
+     "opcion": "Piel genuina de importación, Camello",
+     "precio": 10395
+    }
+   ],
+   "desde": 9345,
    "img": "sillas/ceo-respaldo-bajo.webp"
   },
   {
@@ -1199,6 +1648,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Piel genuina de importación, Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Piel genuina de importación, Negro",
+     "precio": 9060
+    }
+   ],
+   "desde": 9060,
    "img": "sillas/president-respaldo-alto.webp"
   },
   {
@@ -1220,6 +1676,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Piel genuina de importación, Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Piel genuina de importación, Negro",
+     "precio": 8360
+    }
+   ],
+   "desde": 8360,
    "img": "sillas/president-respaldo-bajo.webp"
   },
   {
@@ -1242,6 +1705,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 13185
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 13315
+    }
+   ],
+   "desde": 13185,
    "img": "sillas/boss-white.webp"
   },
   {
@@ -1264,6 +1738,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 13185
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 13315
+    }
+   ],
+   "desde": 13185,
    "img": "sillas/boss-black.webp"
   },
   {
@@ -1285,6 +1770,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Smartmesh de importación Gris claro",
     "Smartmesh de importación Gris Oxford"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación Gris claro",
+     "precio": 7480
+    },
+    {
+     "opcion": "Smartmesh de importación Gris Oxford",
+     "precio": 7480
+    }
+   ],
+   "desde": 7480,
    "img": "sillas/epic.webp"
   },
   {
@@ -1306,6 +1802,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación Vino, Verde, Plata o Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación Vino, Verde, Plata o Negro",
+     "precio": 6220
+    }
+   ],
+   "desde": 6220,
    "img": "sillas/matrix-respaldo-alto-base-aluminio.webp"
   },
   {
@@ -1326,6 +1829,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación Vino, Verde, Plata o Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación Vino, Verde, Plata o Negro",
+     "precio": 5950
+    }
+   ],
+   "desde": 5950,
    "img": "sillas/matrix-respaldo-bajo-base-aluminio.webp"
   },
   {
@@ -1347,6 +1857,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación Vino, Verde, Plata o Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación Vino, Verde, Plata o Negro",
+     "precio": 5775
+    }
+   ],
+   "desde": 5775,
    "img": "sillas/matrix-respaldo-alto-base-polipropileno.webp"
   },
   {
@@ -1367,6 +1884,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación Vino, Verde, Plata o Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación Vino, Verde, Plata o Negro",
+     "precio": 5505
+    }
+   ],
+   "desde": 5505,
    "img": "sillas/matrix-respaldo-bajo-base-polipropileno.webp"
   },
   {
@@ -1387,6 +1911,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Piel sintética de importación, Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Piel sintética de importación, Negro",
+     "precio": 6700
+    }
+   ],
+   "desde": 6700,
    "img": "sillas/skin-i-respaldo-alto.webp"
   },
   {
@@ -1407,6 +1938,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Piel sintética de importación, Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Piel sintética de importación, Negro",
+     "precio": 6425
+    }
+   ],
+   "desde": 6425,
    "img": "sillas/skin-i-respaldo-bajo.webp"
   },
   {
@@ -1431,6 +1969,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Gris, Vino o Azul"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Gris, Vino o Azul",
+     "precio": 5945
+    }
+   ],
+   "desde": 5945,
    "img": "sillas/polar-respaldo-alto.webp"
   },
   {
@@ -1455,6 +2000,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Gris, Vino o Azul"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Gris, Vino o Azul",
+     "precio": 5550
+    }
+   ],
+   "desde": 5550,
    "img": "sillas/polar-respaldo-bajo.webp"
   },
   {
@@ -1477,6 +2029,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación, Tela de importación Gris"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación, Tela de importación Gris",
+     "precio": 5100
+    }
+   ],
+   "desde": 5100,
    "img": "sillas/delta-white-respaldo-alto.webp"
   },
   {
@@ -1499,6 +2058,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación, Tela de importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación, Tela de importación Negro",
+     "precio": 4670
+    }
+   ],
+   "desde": 4670,
    "img": "sillas/delta-black-respaldo-alto.webp"
   },
   {
@@ -1520,6 +2086,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación, Tela de importación Gris"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación, Tela de importación Gris",
+     "precio": 4695
+    }
+   ],
+   "desde": 4695,
    "img": "sillas/delta-white-respaldo-bajo.webp"
   },
   {
@@ -1541,6 +2114,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación, Tela de importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación, Tela de importación Negro",
+     "precio": 4340
+    }
+   ],
+   "desde": 4340,
    "img": "sillas/delta-black-respaldo-bajo.webp"
   },
   {
@@ -1564,6 +2144,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Negro",
+     "precio": 4610
+    }
+   ],
+   "desde": 4610,
    "img": "sillas/screen-respaldo-alto.webp"
   },
   {
@@ -1586,6 +2173,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Negro",
+     "precio": 4255
+    }
+   ],
+   "desde": 4255,
    "img": "sillas/screen-respaldo-bajo.webp"
   },
   {
@@ -1608,6 +2202,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Gris, Azul o Vino"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Gris, Azul o Vino",
+     "precio": 4575
+    }
+   ],
+   "desde": 4575,
    "img": "sillas/artic-white-respaldo-alto.webp"
   },
   {
@@ -1629,6 +2230,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Gris, Azul o Vino"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Gris, Azul o Vino",
+     "precio": 4140
+    }
+   ],
+   "desde": 4140,
    "img": "sillas/artic-white-respaldo-bajo.webp"
   },
   {
@@ -1651,6 +2259,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Negro",
+     "precio": 4140
+    }
+   ],
+   "desde": 4140,
    "img": "sillas/artic-black-respaldo-alto.webp"
   },
   {
@@ -1672,6 +2287,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Negro",
+     "precio": 3830
+    }
+   ],
+   "desde": 3830,
    "img": "sillas/artic-black-respaldo-bajo.webp"
   },
   {
@@ -1694,6 +2316,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Gris"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Gris",
+     "precio": 3700
+    }
+   ],
+   "desde": 3700,
    "img": "sillas/vision-gray-respaldo-alto.webp"
   },
   {
@@ -1715,6 +2344,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Gris"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Gris",
+     "precio": 3300
+    }
+   ],
+   "desde": 3300,
    "img": "sillas/vision-gray-respaldo-bajo.webp"
   },
   {
@@ -1737,6 +2373,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Negro",
+     "precio": 3115
+    }
+   ],
+   "desde": 3115,
    "img": "sillas/vision-black-respaldo-alto.webp"
   },
   {
@@ -1758,6 +2401,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Negro",
+     "precio": 2690
+    }
+   ],
+   "desde": 2690,
    "img": "sillas/vision-black-respaldo-bajo.webp"
   },
   {
@@ -1781,6 +2431,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Smartmesh de importación, Tela de importación Negro",
     "Smartmesh de importación, Tela de importación, Gris, Celeste o Verde"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación, Tela de importación Negro",
+     "precio": 2670
+    },
+    {
+     "opcion": "Smartmesh de importación, Tela de importación, Gris, Celeste o Verde",
+     "precio": 3150
+    }
+   ],
+   "desde": 2670,
    "img": "sillas/fly.webp"
   },
   {
@@ -1801,6 +2462,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Gris"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Gris",
+     "precio": 3085
+    }
+   ],
+   "desde": 3085,
    "img": "sillas/active-gray.webp"
   },
   {
@@ -1821,6 +2489,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Negro",
+     "precio": 2870
+    }
+   ],
+   "desde": 2870,
    "img": "sillas/active-black.webp"
   },
   {
@@ -1843,6 +2518,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Smartmesh de importación / Tela de importación negro",
     "Smartmesh de importación / Tela de importación gris"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación negro",
+     "precio": 2250
+    },
+    {
+     "opcion": "Smartmesh de importación / Tela de importación gris",
+     "precio": 2450
+    }
+   ],
+   "desde": 2250,
    "img": "sillas/click.webp"
   },
   {
@@ -1864,6 +2550,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Smartmesh de Importación Gris",
     "Smartmesh de Importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de Importación Gris",
+     "precio": 7855
+    },
+    {
+     "opcion": "Smartmesh de Importación Negro",
+     "precio": 6835
+    }
+   ],
+   "desde": 6835,
    "img": "sillas/advance-visita.webp"
   },
   {
@@ -1882,6 +2579,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Piel genuina de Importación, Taupe o Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Piel genuina de Importación, Taupe o Negro",
+     "precio": 10465
+    }
+   ],
+   "desde": 10465,
    "img": "sillas/dream-visita.webp"
   },
   {
@@ -1903,6 +2607,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Piel genuina de importación, Negro",
     "Piel genuina de importación, Camello"
    ],
+   "precios": [
+    {
+     "opcion": "Piel genuina de importación, Negro",
+     "precio": 7310
+    },
+    {
+     "opcion": "Piel genuina de importación, Camello",
+     "precio": 7660
+    }
+   ],
+   "desde": 7310,
    "img": "sillas/ceo-visita.webp"
   },
   {
@@ -1922,6 +2637,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Piel genuina de importación, Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Piel genuina de importación, Negro",
+     "precio": 6535
+    }
+   ],
+   "desde": 6535,
    "img": "sillas/president-visita.webp"
   },
   {
@@ -1941,6 +2663,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Piel sintética de importación, Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Piel sintética de importación, Negro",
+     "precio": 5500
+    }
+   ],
+   "desde": 5500,
    "img": "sillas/skin-i-visita.webp"
   },
   {
@@ -1961,6 +2690,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación, Tela de importación Gris"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación, Tela de importación Gris",
+     "precio": 4125
+    }
+   ],
+   "desde": 4125,
    "img": "sillas/delta-white-visita.webp"
   },
   {
@@ -1981,6 +2717,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación, Tela de importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación, Tela de importación Negro",
+     "precio": 3770
+    }
+   ],
+   "desde": 3770,
    "img": "sillas/delta-black-visita.webp"
   },
   {
@@ -2001,6 +2744,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Gris"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Gris",
+     "precio": 3200
+    }
+   ],
+   "desde": 3200,
    "img": "sillas/vision-gray-visita.webp"
   },
   {
@@ -2021,6 +2771,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Negro",
+     "precio": 2430
+    }
+   ],
+   "desde": 2430,
    "img": "sillas/vision-black-visita.webp"
   },
   {
@@ -2040,6 +2797,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Gris"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Gris",
+     "precio": 2880
+    }
+   ],
+   "desde": 2880,
    "img": "sillas/active-gray-visita.webp"
   },
   {
@@ -2059,6 +2823,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Negro",
+     "precio": 2615
+    }
+   ],
+   "desde": 2615,
    "img": "sillas/active-black-visita.webp"
   },
   {
@@ -2081,6 +2852,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 3790
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 3870
+    }
+   ],
+   "desde": 3790,
    "img": "sillas/virtu-white.webp"
   },
   {
@@ -2103,6 +2885,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 3495
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 3585
+    }
+   ],
+   "desde": 3495,
    "img": "sillas/virtu-black.webp"
   },
   {
@@ -2124,6 +2917,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Colores de línea (concha sin tapizar)",
+     "precio": 1270
+    }
+   ],
+   "desde": 1270,
    "img": "sillas/shine.webp"
   },
   {
@@ -2145,6 +2945,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Colores de línea (concha sin tapizar)",
+     "precio": 1270
+    }
+   ],
+   "desde": 1270,
    "img": "sillas/rise.webp"
   },
   {
@@ -2166,6 +2973,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Colores de línea (concha sin tapizar)",
+     "precio": 2720
+    }
+   ],
+   "desde": 2720,
    "img": "sillas/kicca-one.webp"
   },
   {
@@ -2192,6 +3006,37 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 3: Argos",
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 4215
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 2: Aoraki, Hermes, Egeo",
+     "precio": 4515
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 3: Argos",
+     "precio": 4750
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 3735
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 2: Aoraki, Hermes, Egeo",
+     "precio": 3820
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 3: Argos",
+     "precio": 3985
+    },
+    {
+     "opcion": "Sin tapiz · Colores de línea (concha sin tapizar)",
+     "precio": 2830
+    }
+   ],
+   "desde": 2830,
    "img": "sillas/kicca-4-puntas.webp"
   },
   {
@@ -2218,6 +3063,37 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 3: Argos",
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 4295
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 2: Aoraki, Hermes, Egeo",
+     "precio": 4595
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 3: Argos",
+     "precio": 4830
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 3815
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 2: Aoraki, Hermes, Egeo",
+     "precio": 3900
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 3: Argos",
+     "precio": 4065
+    },
+    {
+     "opcion": "Sin tapiz · Colores de línea (concha sin tapizar)",
+     "precio": 2910
+    }
+   ],
+   "desde": 2910,
    "img": "sillas/kicca-trineo.webp"
   },
   {
@@ -2244,6 +3120,37 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 3: Argos",
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 6730
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 2: Aoraki, Hermes, Egeo",
+     "precio": 7030
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 3: Argos",
+     "precio": 7265
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 6250
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 2: Aoraki, Hermes, Egeo",
+     "precio": 6335
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 3: Argos",
+     "precio": 6500
+    },
+    {
+     "opcion": "Sin tapiz · Colores de línea (concha sin tapizar)",
+     "precio": 5345
+    }
+   ],
+   "desde": 5345,
    "img": "sillas/kicca-spider.webp"
   },
   {
@@ -2270,6 +3177,37 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 3: Argos",
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 7355
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 2: Aoraki, Hermes, Egeo",
+     "precio": 7655
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 3: Argos",
+     "precio": 7890
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 6875
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 2: Aoraki, Hermes, Egeo",
+     "precio": 6960
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 3: Argos",
+     "precio": 7130
+    },
+    {
+     "opcion": "Sin tapiz · Colores de línea (concha sin tapizar)",
+     "precio": 5970
+    }
+   ],
+   "desde": 5970,
    "img": "sillas/kicca-con-rodajas.webp"
   },
   {
@@ -2296,6 +3234,37 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 4200
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 4300
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 4530
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 3740
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 3825
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 4015
+    },
+    {
+     "opcion": "Sin tapiz · Colores de línea (concha sin tapizar)",
+     "precio": 2830
+    }
+   ],
+   "desde": 2830,
    "img": "sillas/kalea-4-puntas.webp"
   },
   {
@@ -2322,6 +3291,37 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 4280
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 4375
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 4610
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 3820
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 3900
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 4095
+    },
+    {
+     "opcion": "Sin tapiz · Colores de línea (concha sin tapizar)",
+     "precio": 2910
+    }
+   ],
+   "desde": 2910,
    "img": "sillas/kalea-trineo.webp"
   },
   {
@@ -2349,6 +3349,37 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 6715
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 6815
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 7045
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 6255
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 6340
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 6535
+    },
+    {
+     "opcion": "Sin tapiz · Colores de línea (concha sin tapizar)",
+     "precio": 5345
+    }
+   ],
+   "desde": 5345,
    "img": "sillas/kalea-spider.webp"
   },
   {
@@ -2376,6 +3407,37 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 7340
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 7440
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 7670
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 6880
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 6965
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 7160
+    },
+    {
+     "opcion": "Sin tapiz · Colores de línea (concha sin tapizar)",
+     "precio": 5970
+    }
+   ],
+   "desde": 5970,
    "img": "sillas/kalea-con-rodajas.webp"
   },
   {
@@ -2401,6 +3463,37 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 3445
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 3470
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 3740
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 3175
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 3260
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 3455
+    },
+    {
+     "opcion": "Sin tapiz · Colores de línea (concha sin tapizar)",
+     "precio": 2435
+    }
+   ],
+   "desde": 2435,
    "img": "sillas/vela-trineo.webp"
   },
   {
@@ -2427,6 +3520,37 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 4210
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 4235
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 4505
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 3940
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 4025
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 4220
+    },
+    {
+     "opcion": "Sin tapiz · Colores de línea (concha sin tapizar)",
+     "precio": 3200
+    }
+   ],
+   "desde": 3200,
    "img": "sillas/vela-con-rodajas.webp"
   },
   {
@@ -2453,6 +3577,37 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 4210
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 4235
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 4505
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 3940
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 4025
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 4220
+    },
+    {
+     "opcion": "Sin tapiz · Colores de línea (concha sin tapizar)",
+     "precio": 3200
+    }
+   ],
+   "desde": 3200,
    "img": "sillas/vela-spider.webp"
   },
   {
@@ -2472,6 +3627,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Smartmesh de importación / Tela de importación Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación / Tela de importación Negro",
+     "precio": 3140
+    }
+   ],
+   "desde": 3140,
    "img": "sillas/swap.webp"
   },
   {
@@ -2492,6 +3654,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 9665
+    },
+    {
+     "opcion": "Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 10155
+    },
+    {
+     "opcion": "Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 11320
+    }
+   ],
+   "desde": 9665,
    "img": "sillas/smart-sin-paleta.webp"
   },
   {
@@ -2513,6 +3690,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 10780
+    },
+    {
+     "opcion": "Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 11270
+    },
+    {
+     "opcion": "Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 12440
+    }
+   ],
+   "desde": 10780,
    "img": "sillas/smart-con-paleta.webp"
   },
   {
@@ -2537,6 +3729,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 3640
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 3720
+    },
+    {
+     "opcion": "Paleta opcional (adicional)",
+     "precio": 925
+    }
+   ],
+   "desde": 3640,
    "img": "sillas/flex-white-con-rodajas.webp"
   },
   {
@@ -2561,6 +3768,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 3275
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 3355
+    },
+    {
+     "opcion": "Paleta opcional (adicional)",
+     "precio": 925
+    }
+   ],
+   "desde": 3275,
    "img": "sillas/flex-gray-con-rodajas.webp"
   },
   {
@@ -2584,6 +3806,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 3495
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 3585
+    },
+    {
+     "opcion": "Paleta opcional (adicional)",
+     "precio": 925
+    }
+   ],
+   "desde": 3495,
    "img": "sillas/flex-white.webp"
   },
   {
@@ -2607,6 +3844,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Pranna (vinil tipo contract, ideal para alto tráfico)"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 3140
+    },
+    {
+     "opcion": "Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 3225
+    },
+    {
+     "opcion": "Paleta opcional (adicional)",
+     "precio": 925
+    }
+   ],
+   "desde": 3140,
    "img": "sillas/flex-gray.webp"
   },
   {
@@ -2627,6 +3879,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Colores de línea (concha sin tapizar)",
+     "precio": 1270
+    }
+   ],
+   "desde": 1270,
    "img": "sillas/pixel.webp"
   },
   {
@@ -2646,6 +3905,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Colores de línea (concha sin tapizar)",
+     "precio": 1545
+    }
+   ],
+   "desde": 1545,
    "img": "sillas/art.webp"
   },
   {
@@ -2665,6 +3931,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Colores de línea (concha sin tapizar)",
+     "precio": 1600
+    }
+   ],
+   "desde": 1600,
    "img": "sillas/icon.webp"
   },
   {
@@ -2684,6 +3957,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Colores de línea (concha sin tapizar)",
+     "precio": 1340
+    }
+   ],
+   "desde": 1340,
    "img": "sillas/token.webp"
   },
   {
@@ -2710,6 +3990,37 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 3: Argos",
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 5030
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 2: Aoraki, Hermes, Egeo",
+     "precio": 5330
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 3: Argos",
+     "precio": 5565
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 4550
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 2: Aoraki, Hermes, Egeo",
+     "precio": 4635
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 3: Argos",
+     "precio": 4800
+    },
+    {
+     "opcion": "Sin tapiz · Colores de línea (concha sin tapizar)",
+     "precio": 3645
+    }
+   ],
+   "desde": 3645,
    "img": "sillas/kicca-banco.webp"
   },
   {
@@ -2736,6 +4047,37 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 5015
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 5115
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 5345
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 4555
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 4640
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 4835
+    },
+    {
+     "opcion": "Sin tapiz · Colores de línea (concha sin tapizar)",
+     "precio": 3645
+    }
+   ],
+   "desde": 3645,
    "img": "sillas/kalea-banco.webp"
   },
   {
@@ -2761,6 +4103,37 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 3945
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 3970
+    },
+    {
+     "opcion": "Asiento y respaldo tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 4240
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 1: Office Crep, Addison, Henry",
+     "precio": 3675
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 3760
+    },
+    {
+     "opcion": "Asiento tapizado · Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 3950
+    },
+    {
+     "opcion": "Sin tapiz · Colores de línea (concha sin tapizar)",
+     "precio": 2935
+    }
+   ],
+   "desde": 2935,
    "img": "sillas/vela-banco.webp"
   },
   {
@@ -2787,6 +4160,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Addison, Henry, Office Crep, Piel sintética",
     "Tela de importación"
    ],
+   "precios": [
+    {
+     "opcion": "Asiento tapizado · Tela de importación",
+     "precio": 3940
+    },
+    {
+     "opcion": "Asiento tapizado · Addison, Henry, Office Crep, Piel sintética",
+     "precio": 4210
+    },
+    {
+     "opcion": "Asiento y respaldo tapizados · Addison, Henry, Office Crep, Piel sintética",
+     "precio": 4490
+    }
+   ],
+   "desde": 3940,
    "img": "sillas/altra.webp"
   },
   {
@@ -2809,6 +4197,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Smartmesh de importación Gris claro con Aro Negro",
     "Smartmesh de importación Gris Oxford con Aro Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Smartmesh de importación Gris claro con Aro Negro",
+     "precio": 8865
+    },
+    {
+     "opcion": "Smartmesh de importación Gris Oxford con Aro Negro",
+     "precio": 8865
+    }
+   ],
+   "desde": 8865,
    "img": "sillas/epic-alta.webp"
   },
   {
@@ -2828,6 +4227,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Colores de línea (concha sin tapizar)",
+     "precio": 2080
+    }
+   ],
+   "desde": 2080,
    "img": "sillas/banco-row.webp"
   },
   {
@@ -2847,6 +4253,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Colores de línea (concha sin tapizar)"
    ],
+   "precios": [
+    {
+     "opcion": "Colores de línea (concha sin tapizar)",
+     "precio": 1715
+    }
+   ],
+   "desde": 1715,
    "img": "sillas/banco-steel.webp"
   },
   {
@@ -2868,6 +4281,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación, Gris claro, Gris oscuro, Azul, Naranja.",
+     "precio": 4670
+    },
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 6400
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 7290
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 7400
+    }
+   ],
+   "desde": 4670,
    "img": "sillas/vibe-trineo.webp"
   },
   {
@@ -2889,6 +4321,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación, Gris claro, Gris oscuro, Azul, Naranja.",
+     "precio": 4670
+    },
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 6400
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 6725
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 7400
+    }
+   ],
+   "desde": 4670,
    "img": "sillas/vibe-rodajas.webp"
   },
   {
@@ -2910,6 +4361,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación, Gris claro, Gris oscuro, Azul, Naranja.",
+     "precio": 5535
+    },
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 7260
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 7585
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 8260
+    }
+   ],
+   "desde": 5535,
    "img": "sillas/vibe-base-madera.webp"
   },
   {
@@ -2931,6 +4401,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación, Gris claro, Gris oscuro, Azul, Naranja.",
+     "precio": 4515
+    },
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 6240
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 6570
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 7240
+    }
+   ],
+   "desde": 4515,
    "img": "sillas/vibe-4-puntas.webp"
   },
   {
@@ -2952,6 +4441,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación: Gris claro, Gris oscuro, Salmón, Verde",
+     "precio": 4200
+    },
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 5820
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 6145
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 6820
+    }
+   ],
+   "desde": 4200,
    "img": "sillas/orbit-spider.webp"
   },
   {
@@ -2973,6 +4481,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación: Gris claro, Gris oscuro, Salmón, Verde",
+     "precio": 4050
+    },
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 5665
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 5990
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 6665
+    }
+   ],
+   "desde": 4050,
    "img": "sillas/orbit-4-puntas.webp"
   },
   {
@@ -2991,6 +4518,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación: Beige, Gris"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación: Beige, Gris",
+     "precio": 3235
+    }
+   ],
+   "desde": 3235,
    "img": "sillas/luna.webp"
   },
   {
@@ -3009,6 +4543,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación: Beige, Gris"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación: Beige, Gris",
+     "precio": 3690
+    }
+   ],
+   "desde": 3690,
    "img": "sillas/swing.webp"
   },
   {
@@ -3027,6 +4568,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación: Gris claro, Gris oscuro"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación: Gris claro, Gris oscuro",
+     "precio": 6000
+    }
+   ],
+   "desde": 6000,
    "img": "sillas/zen-trineo.webp"
   },
   {
@@ -3046,6 +4594,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación: Gris claro, Gris oscuro"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación: Gris claro, Gris oscuro",
+     "precio": 6470
+    }
+   ],
+   "desde": 6470,
    "img": "sillas/zen-base-aluminio.webp"
   },
   {
@@ -3065,6 +4620,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación: Gris, Camello"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación: Gris, Camello",
+     "precio": 4365
+    }
+   ],
+   "desde": 4365,
    "img": "sillas/quest.webp"
   },
   {
@@ -3085,6 +4647,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 8435
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 8690
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 9295
+    }
+   ],
+   "desde": 8435,
    "img": "sillas/eva.webp"
   },
   {
@@ -3105,6 +4682,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 7995
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 8340
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 9150
+    }
+   ],
+   "desde": 7995,
    "img": "sillas/edge-4-puntas.webp"
   },
   {
@@ -3125,6 +4717,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 8810
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 9150
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 9955
+    }
+   ],
+   "desde": 8810,
    "img": "sillas/edge-base-madera.webp"
   },
   {
@@ -3146,6 +4753,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 9380
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 9715
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 10520
+    }
+   ],
+   "desde": 9380,
    "img": "sillas/edge-spider.webp"
   },
   {
@@ -3166,6 +4788,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 6950
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 7340
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 8265
+    }
+   ],
+   "desde": 6950,
    "img": "sillas/pulse.webp"
   },
   {
@@ -3186,6 +4823,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 9020
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 9445
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 10450
+    }
+   ],
+   "desde": 9020,
    "img": "sillas/glam.webp"
   },
   {
@@ -3206,6 +4858,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 11225
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 11820
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 13230
+    }
+   ],
+   "desde": 11225,
    "img": "sillas/aura-trineo.webp"
   },
   {
@@ -3226,6 +4893,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 12925
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 13520
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 14925
+    }
+   ],
+   "desde": 12925,
    "img": "sillas/aura-base-madera.webp"
   },
   {
@@ -3247,6 +4929,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 12520
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 13115
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 14520
+    }
+   ],
+   "desde": 12520,
    "img": "sillas/aura-base-aluminio.webp"
   },
   {
@@ -3268,6 +4965,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tapizado de origen interior en piel y exterior en vinil, Negro, Camello"
    ],
+   "precios": [
+    {
+     "opcion": "Tapizado de origen interior en piel y exterior en vinil, Negro, Camello",
+     "precio": 21135
+    }
+   ],
+   "desde": 21135,
    "img": "sillas/enigma.webp"
   },
   {
@@ -3288,6 +4992,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 7350
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 8030
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 8675
+    }
+   ],
+   "desde": 7350,
    "img": "sillas/nexus-1-plaza.webp"
   },
   {
@@ -3308,6 +5027,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 17105
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 17595
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 18760
+    }
+   ],
+   "desde": 17105,
    "img": "sillas/kinzika-l-base-plato.webp"
   },
   {
@@ -3328,6 +5062,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 18430
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 18925
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 20090
+    }
+   ],
+   "desde": 18430,
    "img": "sillas/kinzika-l-base-de-madera.webp"
   },
   {
@@ -3348,6 +5097,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 17940
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 18380
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 19430
+    }
+   ],
+   "desde": 17940,
    "img": "sillas/kinzika-m-base-de-madera.webp"
   },
   {
@@ -3368,6 +5132,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 16610
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 17050
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 18100
+    }
+   ],
+   "desde": 16610,
    "img": "sillas/kinzika-m-base-plato.webp"
   },
   {
@@ -3388,6 +5167,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 12940
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 13350
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 14320
+    }
+   ],
+   "desde": 12940,
    "img": "sillas/kinzika-s-base-cruz.webp"
   },
   {
@@ -3408,6 +5202,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 15440
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 15850
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 16820
+    }
+   ],
+   "desde": 15440,
    "img": "sillas/kinzika-s-base-plato.webp"
   },
   {
@@ -3428,6 +5237,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 10255
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 10580
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 11360
+    }
+   ],
+   "desde": 10255,
    "img": "sillas/kimbra-base-de-madera.webp"
   },
   {
@@ -3448,6 +5272,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 9690
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 10015
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 10795
+    }
+   ],
+   "desde": 9690,
    "img": "sillas/kimbra-base-fija.webp"
   },
   {
@@ -3468,6 +5307,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 9150
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 9480
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 10260
+    }
+   ],
+   "desde": 9150,
    "img": "sillas/kimbra-base-rodajas.webp"
   },
   {
@@ -3488,6 +5342,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 10850
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 11175
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 11955
+    }
+   ],
+   "desde": 10850,
    "img": "sillas/flok-base-de-madera.webp"
   },
   {
@@ -3508,6 +5377,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 9925
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 10255
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 11030
+    }
+   ],
+   "desde": 9925,
    "img": "sillas/flok-base-fija.webp"
   },
   {
@@ -3528,6 +5412,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 9095
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 9420
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 10200
+    }
+   ],
+   "desde": 9095,
    "img": "sillas/flok-base-rodajas.webp"
   },
   {
@@ -3548,6 +5447,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 8265
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 8495
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 9045
+    }
+   ],
+   "desde": 8265,
    "img": "sillas/extrakool.webp"
   },
   {
@@ -3569,6 +5483,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 10175
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 10555
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 11450
+    }
+   ],
+   "desde": 10175,
    "img": "sillas/bakko.webp"
   },
   {
@@ -3590,6 +5519,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 17765
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 18390
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 19865
+    }
+   ],
+   "desde": 17765,
    "img": "sillas/bakkone.webp"
   },
   {
@@ -3611,6 +5555,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación, Gris, Beige",
+     "precio": 7940
+    },
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 9555
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 9885
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 10660
+    }
+   ],
+   "desde": 7940,
    "img": "sillas/hub-base-fija.webp"
   },
   {
@@ -3632,6 +5595,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación, Gris, Beige",
+     "precio": 8500
+    },
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 10115
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 10445
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 11220
+    }
+   ],
+   "desde": 8500,
    "img": "sillas/hub-base-rodajas.webp"
   },
   {
@@ -3654,6 +5636,17 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Piel sintética de importación bicolor Cara interior: Color camello, Cara exterior: Color Negro"
    ],
+   "precios": [
+    {
+     "opcion": "Piel sintética de importación bicolor Cara interior: Color camello, Cara exterior: Color Negro",
+     "precio": 11380
+    },
+    {
+     "opcion": "Taburete a juego (adicional)",
+     "precio": 2790
+    }
+   ],
+   "desde": 11380,
    "img": "sillas/infinite.webp"
   },
   {
@@ -3676,6 +5669,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Hermes, Egeo, Pranna (vinil tipo contract, ideal para alto tráfico)",
     "Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 8910
+    },
+    {
+     "opcion": "Hermes, Egeo, Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 9165
+    },
+    {
+     "opcion": "Decoleather Plus",
+     "precio": 9735
+    }
+   ],
+   "desde": 8910,
    "img": "sillas/shell-white.webp"
   },
   {
@@ -3698,6 +5706,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Hermes, Egeo, Pranna (vinil tipo contract, ideal para alto tráfico)",
     "Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 8910
+    },
+    {
+     "opcion": "Hermes, Egeo, Pranna (vinil tipo contract, ideal para alto tráfico)",
+     "precio": 9165
+    },
+    {
+     "opcion": "Decoleather Plus",
+     "precio": 9735
+    }
+   ],
+   "desde": 8910,
    "img": "sillas/shell-black.webp"
   },
   {
@@ -3719,6 +5742,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Tela de importación Gris y Beige",
     "Addison, Henry, Office Crep"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación Gris y Beige",
+     "precio": 8500
+    },
+    {
+     "opcion": "Addison, Henry, Office Crep",
+     "precio": 10115
+    }
+   ],
+   "desde": 8500,
    "img": "sillas/hub-con-rodajas.webp"
   },
   {
@@ -3740,6 +5774,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Tela de importación Gris y Beige",
     "Addison, Henry, Office Crep"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación Gris y Beige",
+     "precio": 7940
+    },
+    {
+     "opcion": "Addison, Henry, Office Crep",
+     "precio": 9555
+    }
+   ],
+   "desde": 7940,
    "img": "sillas/hub-fija.webp"
   },
   {
@@ -3759,6 +5804,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Tela de importación Gris",
     "Piel sintética de importación, Negro o Taupe"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación Gris",
+     "precio": 4785
+    },
+    {
+     "opcion": "Piel sintética de importación, Negro o Taupe",
+     "precio": 4785
+    }
+   ],
+   "desde": 4785,
    "img": "sillas/city-spider.webp"
   },
   {
@@ -3778,6 +5834,17 @@ window.RUAV_SILLERIA = Object.freeze({
     "Tela de importación Gris",
     "Piel sintética de importación, Negro o Taupe"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación Gris",
+     "precio": 4120
+    },
+    {
+     "opcion": "Piel sintética de importación, Negro o Taupe",
+     "precio": 4120
+    }
+   ],
+   "desde": 4120,
    "img": "sillas/city-cruz.webp"
   },
   {
@@ -3799,6 +5866,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 2745
+    },
+    {
+     "opcion": "Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 2875
+    },
+    {
+     "opcion": "Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 3185
+    }
+   ],
+   "desde": 2745,
    "img": "sillas/switch.webp"
   },
   {
@@ -3820,6 +5902,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Hermes, Egeo",
     "Decoleather"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep",
+     "precio": 6655
+    },
+    {
+     "opcion": "Hermes, Egeo",
+     "precio": 7770
+    },
+    {
+     "opcion": "Decoleather",
+     "precio": 8030
+    }
+   ],
+   "desde": 6655,
    "img": "sillas/space.webp"
   },
   {
@@ -3841,6 +5938,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 14245
+    },
+    {
+     "opcion": "Grado 2: Pranna",
+     "precio": 14940
+    },
+    {
+     "opcion": "Grado 2: Boucle, Aoraki, Hermes, Egeo",
+     "precio": 19235
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 19905
+    }
+   ],
+   "desde": 14245,
    "img": "sillas/sofa-nest-lateral.webp"
   },
   {
@@ -3862,6 +5978,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 14670
+    },
+    {
+     "opcion": "Grado 2: Pranna",
+     "precio": 15020
+    },
+    {
+     "opcion": "Grado 2: Boucle, Aoraki, Hermes, Egeo",
+     "precio": 17165
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 17500
+    }
+   ],
+   "desde": 14670,
    "img": "sillas/sofa-nest-esquinero.webp"
   },
   {
@@ -3885,6 +6020,29 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 10870
+    },
+    {
+     "opcion": "Grado 2: Pranna",
+     "precio": 11130
+    },
+    {
+     "opcion": "Grado 2: Boucle, Aoraki, Hermes, Egeo",
+     "precio": 12740
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 12990
+    },
+    {
+     "opcion": "Multicontacto opcional (adicional)",
+     "precio": 1325
+    }
+   ],
+   "desde": 10870,
    "img": "sillas/sofa-nest-individual.webp"
   },
   {
@@ -3905,6 +6063,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Grado 3: Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Grado 1: Office Crep, Addison, Henry",
+     "precio": 13010
+    },
+    {
+     "opcion": "Grado 2: Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 14055
+    },
+    {
+     "opcion": "Grado 3: Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 15185
+    }
+   ],
+   "desde": 13010,
    "img": "sillas/nexus-2-plazas.webp"
   },
   {
@@ -3924,6 +6097,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Metálica en color Azul, Ladrillo o Carbón"
    ],
+   "precios": [
+    {
+     "opcion": "Metálica en color Azul, Ladrillo o Carbón",
+     "precio": 6450
+    }
+   ],
+   "desde": 6450,
    "img": "sillas/mesa-chic-central.webp"
   },
   {
@@ -3943,6 +6123,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Metálica en color Azul, Ladrillo o Carbón"
    ],
+   "precios": [
+    {
+     "opcion": "Metálica en color Azul, Ladrillo o Carbón",
+     "precio": 5995
+    }
+   ],
+   "desde": 5995,
    "img": "sillas/mesa-chic-esquinera.webp"
   },
   {
@@ -3964,6 +6151,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Boucle, Aoraki, Hermes, Egeo",
     "Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 6820
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 6915
+    },
+    {
+     "opcion": "Boucle, Aoraki, Hermes, Egeo",
+     "precio": 7505
+    },
+    {
+     "opcion": "Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 7600
+    }
+   ],
+   "desde": 6820,
    "img": "sillas/sofa-joy-pouf.webp"
   },
   {
@@ -3985,6 +6191,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Boucle, Aoraki, Hermes, Egeo",
     "Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 12415
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 12590
+    },
+    {
+     "opcion": "Boucle, Aoraki, Hermes, Egeo",
+     "precio": 13665
+    },
+    {
+     "opcion": "Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 13830
+    }
+   ],
+   "desde": 12415,
    "img": "sillas/sofa-joy-una-plaza.webp"
   },
   {
@@ -4006,6 +6231,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Boucle, Aoraki, Hermes, Egeo",
     "Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 19795
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 20065
+    },
+    {
+     "opcion": "Boucle, Aoraki, Hermes, Egeo",
+     "precio": 21730
+    },
+    {
+     "opcion": "Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 21985
+    }
+   ],
+   "desde": 19795,
    "img": "sillas/sofa-joy-dos-plazas.webp"
   },
   {
@@ -4026,6 +6270,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 4945
+    },
+    {
+     "opcion": "Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 5120
+    },
+    {
+     "opcion": "Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 5500
+    }
+   ],
+   "desde": 4945,
    "img": "sillas/sofa-sophia-modular.webp"
   },
   {
@@ -4046,6 +6305,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 4355
+    },
+    {
+     "opcion": "Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 4555
+    },
+    {
+     "opcion": "Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 4910
+    }
+   ],
+   "desde": 4355,
    "img": "sillas/sofa-sophia-pouf.webp"
   },
   {
@@ -4064,6 +6338,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Melamina"
    ],
+   "precios": [
+    {
+     "opcion": "Melamina",
+     "precio": 3720
+    }
+   ],
+   "desde": 3720,
    "img": "sillas/sofa-sophia-mesa-modular.webp"
   },
   {
@@ -4082,6 +6363,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Melamina"
    ],
+   "precios": [
+    {
+     "opcion": "Melamina",
+     "precio": 2035
+    }
+   ],
+   "desde": 2035,
    "img": "sillas/sofa-sophia-mesa-auxiliar.webp"
   },
   {
@@ -4102,6 +6390,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna, Boucle, Aoraki, Hermes, Egeo",
     "Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 980
+    },
+    {
+     "opcion": "Pranna, Boucle, Aoraki, Hermes, Egeo",
+     "precio": 1605
+    },
+    {
+     "opcion": "Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 1930
+    }
+   ],
+   "desde": 980,
    "img": "sillas/sofa-sophia-descansabrazos.webp"
   },
   {
@@ -4120,6 +6423,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación Gris claro con Gris oxford"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación Gris claro con Gris oxford",
+     "precio": 8130
+    }
+   ],
+   "desde": 8130,
    "img": "sillas/sofa-loft-lounge.webp"
   },
   {
@@ -4138,6 +6448,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación Gris claro con Gris oxford"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación Gris claro con Gris oxford",
+     "precio": 6655
+    }
+   ],
+   "desde": 6655,
    "img": "sillas/sofa-loft-una-plaza.webp"
   },
   {
@@ -4156,6 +6473,13 @@ window.RUAV_SILLERIA = Object.freeze({
    "tapices": [
     "Tela de importación Gris claro con Gris oxford"
    ],
+   "precios": [
+    {
+     "opcion": "Tela de importación Gris claro con Gris oxford",
+     "precio": 11485
+    }
+   ],
+   "desde": 11485,
    "img": "sillas/sofa-loft-dos-plazas.webp"
   },
   {
@@ -4178,6 +6502,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Boucle, Aoraki, Hermes, Egeo",
     "Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 16125
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 16390
+    },
+    {
+     "opcion": "Boucle, Aoraki, Hermes, Egeo",
+     "precio": 18030
+    },
+    {
+     "opcion": "Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 18285
+    }
+   ],
+   "desde": 16125,
    "img": "sillas/sofa-wave-una-plaza.webp"
   },
   {
@@ -4200,6 +6543,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Boucle, Aoraki, Hermes, Egeo",
     "Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 23825
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 24210
+    },
+    {
+     "opcion": "Boucle, Aoraki, Hermes, Egeo",
+     "precio": 26570
+    },
+    {
+     "opcion": "Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 26940
+    }
+   ],
+   "desde": 23825,
    "img": "sillas/sofa-wave-dos-plazas.webp"
   },
   {
@@ -4222,6 +6584,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Boucle, Aoraki, Hermes, Egeo",
     "Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 5535
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 5665
+    },
+    {
+     "opcion": "Boucle, Aoraki, Hermes, Egeo",
+     "precio": 6440
+    },
+    {
+     "opcion": "Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 6565
+    }
+   ],
+   "desde": 5535,
    "img": "sillas/sofa-wave-pouf-chico.webp"
   },
   {
@@ -4244,6 +6625,25 @@ window.RUAV_SILLERIA = Object.freeze({
     "Boucle, Aoraki, Hermes, Egeo",
     "Avalon, Maglia, Argos, Decoleather Plus"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 10660
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 10795
+    },
+    {
+     "opcion": "Boucle, Aoraki, Hermes, Egeo",
+     "precio": 11625
+    },
+    {
+     "opcion": "Avalon, Maglia, Argos, Decoleather Plus",
+     "precio": 11755
+    }
+   ],
+   "desde": 10660,
    "img": "sillas/sofa-wave-pouf-grande.webp"
   },
   {
@@ -4263,6 +6663,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna",
     "Eco Leather"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 13680
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 14005
+    },
+    {
+     "opcion": "Eco Leather",
+     "precio": 15560
+    }
+   ],
+   "desde": 13680,
    "img": "sillas/sofa-cubic-una-plaza.webp"
   },
   {
@@ -4282,6 +6697,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna",
     "Eco Leather"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 17815
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 18860
+    },
+    {
+     "opcion": "Eco Leather",
+     "precio": 20955
+    }
+   ],
+   "desde": 17815,
    "img": "sillas/sofa-cubic-dos-plazas.webp"
   },
   {
@@ -4301,6 +6731,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna",
     "Eco Leather"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 22575
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 24090
+    },
+    {
+     "opcion": "Eco Leather",
+     "precio": 26765
+    }
+   ],
+   "desde": 22575,
    "img": "sillas/sofa-cubic-tres-plazas.webp"
   },
   {
@@ -4320,6 +6765,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna",
     "Eco Leather"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 18720
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 19060
+    },
+    {
+     "opcion": "Eco Leather",
+     "precio": 20685
+    }
+   ],
+   "desde": 18720,
    "img": "sillas/sofa-element-una-plaza.webp"
   },
   {
@@ -4339,6 +6799,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna",
     "Eco Leather"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 23065
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 23515
+    },
+    {
+     "opcion": "Eco Leather",
+     "precio": 25660
+    }
+   ],
+   "desde": 23065,
    "img": "sillas/sofa-element-dos-plazas.webp"
   },
   {
@@ -4358,6 +6833,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna",
     "Eco Leather"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 26505
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 27040
+    },
+    {
+     "opcion": "Eco Leather",
+     "precio": 29580
+    }
+   ],
+   "desde": 26505,
    "img": "sillas/sofa-element-tres-plazas.webp"
   },
   {
@@ -4377,6 +6867,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna",
     "Eco Leather"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 11220
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 11610
+    },
+    {
+     "opcion": "Eco Leather",
+     "precio": 13465
+    }
+   ],
+   "desde": 11220,
    "img": "sillas/sofa-profile-una-plaza.webp"
   },
   {
@@ -4396,6 +6901,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna",
     "Eco Leather"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 14975
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 15540
+    },
+    {
+     "opcion": "Eco Leather",
+     "precio": 18250
+    }
+   ],
+   "desde": 14975,
    "img": "sillas/sofa-profile-dos-plazas.webp"
   },
   {
@@ -4415,6 +6935,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna",
     "Eco Leather"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 23920
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 24655
+    },
+    {
+     "opcion": "Eco Leather",
+     "precio": 28175
+    }
+   ],
+   "desde": 23920,
    "img": "sillas/sofa-profile-tres-plazas.webp"
   },
   {
@@ -4434,6 +6969,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna",
     "Eco Leather"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 13240
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 13615
+    },
+    {
+     "opcion": "Eco Leather",
+     "precio": 15405
+    }
+   ],
+   "desde": 13240,
    "img": "sillas/sofa-rubi-una-plaza.webp"
   },
   {
@@ -4453,6 +7003,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna",
     "Eco Leather"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 18180
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 18720
+    },
+    {
+     "opcion": "Eco Leather",
+     "precio": 21305
+    }
+   ],
+   "desde": 18180,
    "img": "sillas/sofa-rubi-dos-plazas.webp"
   },
   {
@@ -4472,6 +7037,21 @@ window.RUAV_SILLERIA = Object.freeze({
     "Pranna",
     "Eco Leather"
    ],
+   "precios": [
+    {
+     "opcion": "Addison, Henry, Office Crep, Piel sintética",
+     "precio": 23665
+    },
+    {
+     "opcion": "Pranna",
+     "precio": 24380
+    },
+    {
+     "opcion": "Eco Leather",
+     "precio": 27795
+    }
+   ],
+   "desde": 23665,
    "img": "sillas/sofa-rubi-tres-plazas.webp"
   }
  ]

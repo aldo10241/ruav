@@ -61,6 +61,11 @@ foto, las características y las tapicerías; **omite** precios, tiempos de emba
 piezas por caja, políticas de venta, datos bancarios, accesorios Sophia y las portadas de
 “nuevo producto”. Las categorías se asignan en el propio script (`category_of`).
 
+**Precios:** cada precio vigente (en negro; los tachados en gris se ignoran) se asocia con la
+tapicería/versión que está arriba de él en la misma columna. El script se detiene si algún precio
+no se puede asociar, y genera **`tools/reporte_precios_sillas.txt`** (local, no se sube) con
+página → producto → opción = precio, para revisarlo contra el PDF cada vez que se actualice.
+
 Requiere el archivo local **`tools/marcas_excluidas.txt`** (no se sube a GitHub) con las
 marcas del proveedor que deben eliminarse o sustituirse; el script se detiene si alguna queda
 en los datos. Si cambia el diseño del PDF (páginas, nombres no extraíbles), revisa

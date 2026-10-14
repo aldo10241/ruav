@@ -14,3 +14,4 @@ Thumbs.db
 
 # Marcas del proveedor (se usan para filtrarlas del sitio; no deben publicarse)
 tools/marcas_excluidas.txt
+tools/reporte_precios_sillas.txt

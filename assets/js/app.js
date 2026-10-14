@@ -135,16 +135,32 @@
   function isSilla(p) { return !!p.familia; }
   // Opción elegida por el cliente: acabado (mobiliario) o tapicería (sillería).
   function optionLabel(p) { return isSilla(p) ? "Tapicería" : "Acabado"; }
+  // Opciones con precio de una silla (sin los adicionales como "Paleta opcional").
+  function priceOptions(p) {
+    return (p.precios || []).filter(function (x) { return x.opcion.indexOf("(adicional)") === -1; });
+  }
+  function extrasOf(p) {
+    return (p.precios || []).filter(function (x) { return x.opcion.indexOf("(adicional)") > -1; });
+  }
+  function priceOf(p, opcion) {
+    var o = priceOptions(p).find(function (x) { return x.opcion === opcion; });
+    return o ? o.precio : null;
+  }
+  var MXN = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 });
+  function money(n) { return MXN.format(n); }
+  var AVISO_PRECIOS = "Precios de lista en pesos mexicanos, sujetos a cambio sin previo aviso. El precio final, IVA, envío y disponibilidad se confirman en tu cotización.";
   function validOption(p, opcion) {
     if (!opcion || typeof opcion !== "string") return false;
-    return isSilla(p) ? (p.tapices || []).indexOf(opcion) > -1 : ACAB_BY_NAME.has(opcion);
+    return isSilla(p) ? priceOf(p, opcion) !== null : ACAB_BY_NAME.has(opcion);
   }
   function itemKey(sku, opcion) { return sku + "|" + (opcion || ""); }
   function lineFor(p, qty, opcion) {
     var opt = opcion && validOption(p, opcion) ? " — " + optionLabel(p) + ": " + opcion : "";
     if (isSilla(p)) {
       var cat = CAT_BY_ID.get(p.cat);
-      return "• " + p.nombre + " (" + (cat ? cat.name : "Sillería") + ")" + opt + " — Cantidad: " + qty;
+      var precio = opt ? priceOf(p, opcion) : null;
+      var ref = precio !== null ? " — Precio de lista: " + money(precio) + " c/u" : (p.desde ? " — Desde " + money(p.desde) : "");
+      return "• " + p.nombre + " (" + (cat ? cat.name : "Sillería") + ")" + opt + ref + " — Cantidad: " + qty;
     }
     return "• " + p.nombre + " — Clave " + p.sku + (p.medidas ? " (" + dimsShort(p) + ")" : "") + opt + " — Cantidad: " + qty;
   }
@@ -280,6 +296,8 @@
           h("a", { href: productUrl(p), text: p.nombre }),
           h("div", { class: "pc-sku", text: isSilla(p) ? subtitle(p) : p.sku + " · " + dimsShort(p) }),
           it.opcion ? h("div", { class: "quote-opt", text: optionLabel(p) + ": " + it.opcion }) : null,
+          isSilla(p) ? h("div", { class: "quote-opt quote-price", text: priceOf(p, it.opcion) !== null
+            ? "Precio de lista: " + money(priceOf(p, it.opcion)) + " c/u" : "Desde " + money(p.desde) + " (elige tapicería en la ficha)" }) : null,
           h("div", { class: "quote-item-row" },
             qtyControl(it.qty, function (v) { Quote.set(p.sku, it.opcion, v); }, true),
             h("button", { type: "button", class: "remove-btn", text: "Quitar", "aria-label": "Quitar " + p.nombre + " " + p.sku,
@@ -379,6 +397,7 @@
           return h("div", null, h("dt", { text: d[0] }), h("dd", { text: fmtLen(d[1]) }));
         })) : null,
         isSilla(p) && p.caracteristicas.length ? h("p", { class: "pc-feat", text: p.caracteristicas[0] }) : null,
+        isSilla(p) && p.desde ? h("p", { class: "pc-price" }, h("small", { text: priceOptions(p).length > 1 ? "Desde" : "Precio de lista" }), money(p.desde), h("sup", { text: "*", title: AVISO_PRECIOS })) : null,
         h("div", { class: "pc-actions" },
           addButton(p),
           waAnchor(singleMessage(p, 1), "Cotizar " + p.nombre + " por WhatsApp", "btn btn-wa icon-only"))));
@@ -545,7 +564,7 @@
       fondo: /^\d{2,5}$/.test(params.get("fondo") || "") ? params.get("fondo") : "",
       alto: /^\d{2,5}$/.test(params.get("alto") || "") ? params.get("alto") : "",
       q: cleanInput(params.get("q"), 80),
-      orden: ["", "frente-asc", "frente-desc", "nombre", "clave"].indexOf(params.get("orden")) > 0 ? params.get("orden") : "",
+      orden: ["", "frente-asc", "frente-desc", "precio-asc", "precio-desc", "nombre", "clave"].indexOf(params.get("orden")) > 0 ? params.get("orden") : "",
       shown: PAGE,
     };
 
@@ -580,6 +599,11 @@
       var copy = list.slice();
       if (s === "clave") copy.sort(function (a, b) { return a.sku.localeCompare(b.sku); });
       else if (s === "nombre") copy.sort(function (a, b) { return a.nombre.localeCompare(b.nombre, "es"); });
+      else if (s === "precio-asc" || s === "precio-desc") copy.sort(function (a, b) {
+        // Los productos sin precio publicado (mobiliario) van al final.
+        if (!a.desde || !b.desde) return (a.desde ? 0 : 1) - (b.desde ? 0 : 1);
+        return s === "precio-asc" ? a.desde - b.desde : b.desde - a.desde;
+      });
       else copy.sort(function (a, b) {
         var d = ((a.medidas || {}).frente || 0) - ((b.medidas || {}).frente || 0);
         if (!d) d = ((a.medidas || {}).fondo || 0) - ((b.medidas || {}).fondo || 0);
@@ -688,6 +712,11 @@
       $("#results-noun").textContent = list.length === 1 ? " producto" : " productos";
       clear(grid);
       $("#catalog-empty").hidden = list.length > 0;
+      var notice = $("#price-notice");
+      if (notice) {
+        notice.textContent = "* " + AVISO_PRECIOS;
+        notice.hidden = !list.some(function (p) { return p.desde; });
+      }
       list.slice(0, state.shown).forEach(function (p) { grid.appendChild(productCard(p, !state.cat)); });
       var more = $("#load-more");
       more.hidden = list.length <= state.shown;
@@ -749,25 +778,101 @@
     });
     return groups;
   }
-  // Selector de acabado en la ficha de mobiliario (clic de nuevo para quitar la selección).
+  function finishSrc(a) { return "assets/img/acabados/" + a.id + ".webp"; }
+
+  // Visor ampliado de acabados (con flechas para recorrerlos). onPick opcional: botón "Elegir este acabado".
+  var viewer;
+  function openFinishViewer(nombre, onPick) {
+    if (!viewer) {
+      var big = h("img", { alt: "", width: 272, height: 272 });
+      var title = h("h2"), kind = h("small"), count = h("span", { class: "fv-count" });
+      var pickBtn = h("button", { type: "button", class: "btn btn-dark btn-sm", text: "Elegir este acabado" });
+      var dlg = h("dialog", { class: "finish-viewer", "aria-label": "Acabado ampliado" },
+        h("button", { type: "button", class: "icon-btn fv-close", "aria-label": "Cerrar", onclick: function () { dlg.close(); } }, icon("close")),
+        h("div", { class: "fv-stage" },
+          h("button", { type: "button", class: "icon-btn fv-nav fv-prev", "aria-label": "Acabado anterior", onclick: function () { viewer.go(-1); } }, icon("arrow")),
+          big,
+          h("button", { type: "button", class: "icon-btn fv-nav fv-next", "aria-label": "Acabado siguiente", onclick: function () { viewer.go(1); } }, icon("arrow"))),
+        h("div", { class: "fv-info" }, kind, title, count),
+        pickBtn,
+        h("p", { class: "stock-note", text: AVISO_EXISTENCIAS }));
+      dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); }); // clic en el fondo
+      dlg.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight") viewer.go(1);
+        if (e.key === "ArrowLeft") viewer.go(-1);
+      });
+      document.body.appendChild(dlg);
+      viewer = {
+        dlg: dlg, i: 0, onPick: null,
+        show: function (i) {
+          this.i = (i + ACABADOS.length) % ACABADOS.length;
+          var a = ACABADOS[this.i];
+          big.src = finishSrc(a);
+          big.alt = "Acabado " + a.nombre;
+          title.textContent = a.nombre;
+          kind.textContent = a.tipo;
+          count.textContent = (this.i + 1) + " de " + ACABADOS.length;
+        },
+        go: function (d) { this.show(this.i + d); },
+      };
+      pickBtn.addEventListener("click", function () {
+        if (viewer.onPick) viewer.onPick(ACABADOS[viewer.i].nombre);
+        dlg.close();
+      });
+      viewer.pickBtn = pickBtn;
+    }
+    viewer.onPick = onPick || null;
+    viewer.pickBtn.hidden = !onPick;
+    viewer.show(Math.max(0, ACABADOS.findIndex(function (a) { return a.nombre === nombre; })));
+    if (typeof viewer.dlg.showModal === "function") viewer.dlg.showModal();
+    else viewer.dlg.setAttribute("open", "");
+  }
+
+  // Selector de acabado en la ficha de mobiliario: vista previa grande + muestras; clic de nuevo quita la selección.
   function finishPicker(onChange) {
     var current = "";
     var label = h("strong", { text: "Sin elegir (opcional)" });
+    var prevImg = h("img", { alt: "", width: 272, height: 272 });
+    var prevName = h("strong"), prevKind = h("small");
+    var preview = h("div", { class: "finish-preview", hidden: true },
+      h("button", { type: "button", class: "fp-img", "aria-label": "Ver acabado en grande", onclick: function () {
+        openFinishViewer(preview.getAttribute("data-nombre"), function (n) { if (n !== current) select(n); });
+      } }, prevImg),
+      h("div", null, prevKind, prevName,
+        h("button", { type: "button", class: "link-btn", text: "Ver en grande", onclick: function () {
+          openFinishViewer(preview.getAttribute("data-nombre"), function (n) { if (n !== current) select(n); });
+        } })));
     var buttons = [];
+    function showPreview(nombre) {
+      var a = ACAB_BY_NAME.get(nombre);
+      preview.hidden = !a;
+      if (!a) return;
+      preview.setAttribute("data-nombre", a.nombre);
+      prevImg.src = finishSrc(a);
+      prevImg.alt = "Acabado " + a.nombre;
+      prevName.textContent = a.nombre;
+      prevKind.textContent = a.tipo;
+    }
     function select(nombre) {
       current = current === nombre ? "" : nombre;
       buttons.forEach(function (b) { b.setAttribute("aria-checked", String(b.getAttribute("data-nombre") === current)); });
       label.textContent = current || "Sin elegir (opcional)";
+      showPreview(current);
       onChange(current);
     }
     var block = h("div", { class: "finish-picker" },
       h("div", { class: "finish-head" }, h("span", { text: "Acabado: " }), label),
+      preview,
       finishGroups().map(function (g) {
         return h("div", { class: "finish-group" },
           h("small", { text: g.tipo }),
           h("div", { class: "swatches", role: "radiogroup", "aria-label": "Acabados " + g.tipo }, g.items.map(function (a) {
             var b = swatch(a, { tag: "button", attrs: { type: "button", role: "radio", "aria-checked": "false", "data-nombre": a.nombre,
-              "aria-label": a.nombre, onclick: function () { select(a.nombre); } } });
+              "aria-label": a.nombre, onclick: function () { select(a.nombre); },
+              onmouseenter: function () { showPreview(a.nombre); },
+              onmouseleave: function () { showPreview(current); },
+              onfocus: function () { showPreview(a.nombre); },
+              onblur: function () { showPreview(current); } } });
             buttons.push(b);
             return b;
           })));
@@ -781,7 +886,10 @@
     finishGroups().forEach(function (g) {
       root.appendChild(h("div", { class: "finish-group" },
         h("h3", { text: g.tipo + " (" + g.items.length + ")" }),
-        h("div", { class: "swatches swatches-lg" }, g.items.map(function (a) { return swatch(a); }))));
+        h("div", { class: "swatches swatches-lg" }, g.items.map(function (a) {
+          return swatch(a, { tag: "button", attrs: { type: "button", "aria-label": "Ver " + a.nombre + " en grande",
+            onclick: function () { openFinishViewer(a.nombre); } } });
+        }))));
     });
   }
 
@@ -824,11 +932,29 @@
     var waBtn = waAnchor(singleMessage(p, 1), "Cotizar por WhatsApp", "btn btn-wa btn-block");
     function refreshWa() { waBtn.href = waLink(singleMessage(p, qtyVal, optVal)); }
     var qty = qtyControl(1, function (v) { qtyVal = v; refreshWa(); });
-    var tapizSelect = silla && p.tapices.length ? h("label", { class: "tapiz-select" }, "Tapicería de interés (opcional)",
-      h("select", { class: "field", onchange: function (e) { optVal = validOption(p, e.target.value) ? e.target.value : ""; refreshWa(); } },
-        h("option", { value: "", text: "Aún no lo sé / quiero asesoría" }),
-        p.tapices.map(function (t) { return h("option", { value: t, text: t }); }))) : null;
+    var tapizSelect = null;
+    if (silla && priceOptions(p).length) {
+      var opts = priceOptions(p);
+      var single = opts.length === 1;
+      var priceLabel = h("small", { text: single ? "Precio de lista" : "Desde" });
+      var priceValue = h("strong", { text: money(single ? opts[0].precio : p.desde) });
+      if (single) optVal = opts[0].opcion;
+      tapizSelect = h("div", { class: "price-box" },
+        h("div", { class: "price-now" }, priceLabel, priceValue),
+        single ? h("p", { class: "price-opt", text: opts[0].opcion }) : h("label", { class: "tapiz-select" }, "Elige tapicería o versión para ver su precio",
+          h("select", { class: "field", onchange: function (e) {
+            optVal = validOption(p, e.target.value) ? e.target.value : "";
+            priceLabel.textContent = optVal ? "Precio de lista" : "Desde";
+            priceValue.textContent = money(optVal ? priceOf(p, optVal) : p.desde);
+            refreshWa();
+          } },
+            h("option", { value: "", text: "Selecciona una opción" }),
+            opts.map(function (o) { return h("option", { value: o.opcion, text: o.opcion + " — " + money(o.precio) }); }))),
+        extrasOf(p).map(function (x) { return h("p", { class: "price-extra", text: x.opcion.replace(" (adicional)", "") + ": +" + money(x.precio) + " (adicional)" }); }),
+        h("p", { class: "price-note", text: AVISO_PRECIOS }));
+    }
     var acabadoPicker = !silla && ACABADOS.length ? finishPicker(function (nombre) { optVal = nombre; refreshWa(); }) : null;
+    refreshWa();
 
     var features = silla ? p.caracteristicas.slice() : [];
     var d = silla ? "" : normalize(p.descripcion);
@@ -869,7 +995,7 @@
             qty: function () { return qtyVal; }, opcion: function () { return optVal; } })),
           waBtn,
           h("p", { class: "buy-note" }, icon("wa"), silla
-            ? "Te respondemos por WhatsApp con precio, muestrario de tapices y tiempo de entrega."
+            ? "Te respondemos por WhatsApp para confirmar precio final, existencias, muestrario de tapices y tiempo de entrega."
             : "Te respondemos por WhatsApp con precio, existencias y tiempo de entrega.")),
         h("div", { class: "spec" },
           silla ? null : h("h2", { text: "Descripción" }),
@@ -878,8 +1004,12 @@
           features.length ? h("ul", null, features.map(function (f) { return h("li", { text: f }); })) : null,
           silla && p.versiones.length ? h("h2", { text: "Opciones" }) : null,
           silla && p.versiones.length ? h("ul", null, p.versiones.map(function (f) { return h("li", { text: f }); })) : null,
-          silla && p.tapices.length ? h("h2", { text: "Tapicerías y colores" }) : null,
-          silla && p.tapices.length ? h("ul", { class: "tapices" }, p.tapices.map(function (f) { return h("li", { text: f }); })) : null)));
+          silla && (p.precios || []).length ? h("h2", { text: "Precios de lista por tapicería" }) : null,
+          silla && (p.precios || []).length ? h("table", { class: "price-table" },
+            h("tbody", null, p.precios.map(function (x) {
+              return h("tr", null, h("td", { text: x.opcion }), h("td", { text: (x.opcion.indexOf("(adicional)") > -1 ? "+" : "") + money(x.precio) }));
+            }))) : null,
+          silla && (p.precios || []).length ? h("p", { class: "price-note", text: AVISO_PRECIOS }) : null)));
     root.appendChild(product);
 
     var groupKey = function (x) { return x.familia || x.nombre; };

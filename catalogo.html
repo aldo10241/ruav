@@ -122,11 +122,14 @@
             <option value="">Orden del catálogo</option>
             <option value="frente-asc">Medida: menor a mayor</option>
             <option value="frente-desc">Medida: mayor a menor</option>
+            <option value="precio-asc">Precio: menor a mayor</option>
+            <option value="precio-desc">Precio: mayor a menor</option>
             <option value="nombre">Nombre (A–Z)</option>
             <option value="clave">Clave (A–Z)</option>
           </select>
         </div>
         <div class="active-filters" id="active-filters" hidden></div>
+        <p class="stock-note price-notice" id="price-notice" hidden></p>
         <div class="product-grid" id="catalog-grid"></div>
         <div class="empty" id="catalog-empty" hidden>
           <h2>No encontramos productos con esos filtros</h2>

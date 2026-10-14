@@ -107,14 +107,16 @@ def page_lines(p):
         for l in b.get("lines", []):
             t = "".join(s["text"] for s in l["spans"]).replace("\xa0", " ").strip()
             if t:
-                out.append((pymupdf.Rect(l["bbox"]), t, max(s["size"] for s in l["spans"])))
+                # color: los precios anteriores (tachados) vienen en gris; el vigente en negro.
+                out.append((pymupdf.Rect(l["bbox"]), t, max(s["size"] for s in l["spans"]), l["spans"][0]["color"]))
     return out
 
 
 def group_cells(lines):
-    """Agrupa las líneas de opciones (tapicerías) en celdas por columna y cercanía vertical."""
+    """Agrupa las líneas de opciones (tapicerías) en celdas por columna y cercanía vertical.
+    Devuelve [{"rect": Rect, "lines": [texto, ...]}] en orden de lectura."""
     cols = []
-    for r, t, _ in sorted(lines, key=lambda x: x[0].x0):
+    for r, t in sorted(((l[0], l[1]) for l in lines), key=lambda x: x[0].x0):
         for c in cols:
             if abs(c["x"] - r.x0) <= 6:
                 c["items"].append((r, t))
@@ -126,14 +128,64 @@ def group_cells(lines):
         cur, last = [], None
         for r, t in sorted(c["items"], key=lambda x: x[0].y0):
             if last is not None and r.y0 - last > 7:
-                res.append((cur[0][0], [x for _, x in cur]))
+                res.append(cur)
                 cur = []
             cur.append((r, t))
             last = r.y1
         if cur:
-            res.append((cur[0][0], [x for _, x in cur]))
-    res.sort(key=lambda x: (round(x[0].y0 / 4), x[0].x0))
-    return [ts for _, ts in res]
+            res.append(cur)
+    cells = []
+    for cur in res:
+        rect = pymupdf.Rect(cur[0][0])
+        for r, _ in cur[1:]:
+            rect |= r
+        cells.append({"rect": rect, "lines": [t for _, t in cur]})
+    cells.sort(key=lambda c: (round(c["rect"].y0 / 4), c["rect"].x0))
+    return cells
+
+
+ROW_VERSIONS = re.compile(r"^(asiento y respaldo tapizados?|asiento tapizado|sin tapiz)", re.I)
+EXTRAS = re.compile(r"^(paleta opcional|multicontacto opcional|taburete)", re.I)
+REDUNDANT_VERSIONS = re.compile(r"^(\d plazas?|pouf.*|sofá modular|mesa .*|descansabrazos)$", re.I)
+
+
+def assign_prices(cells, prices, name=""):
+    """Asocia cada precio vigente con la celda de texto que está justo arriba en la misma columna.
+    Regresa [{"opcion": etiqueta, "precio": entero}] y la lista de precios que no se pudieron asociar."""
+    parsed = []
+    for c in cells:
+        v, t = cell_text(c["lines"])
+        parsed.append({"rect": c["rect"], "v": re.sub(r"\s+en$", "", v or "").strip(), "t": t})
+    out, orphans = [], []
+    for r, value in sorted(prices, key=lambda x: (x[0].y0, x[0].x0)):
+        same_col = [c for c in parsed if abs(c["rect"].x0 - r.x0) <= 8 and c["rect"].y0 < r.y0]
+        if not same_col:
+            orphans.append(value)
+            continue
+        cell = max(same_col, key=lambda c: c["rect"].y0)
+        version = cell["v"]
+        if not version:  # versión de la fila (p. ej. "Asiento tapizado") definida en la primera columna
+            above = [c for c in parsed if c["v"] and ROW_VERSIONS.match(c["v"]) and c["rect"].y0 <= cell["rect"].y0 + 2]
+            if above:
+                version = max(above, key=lambda c: c["rect"].y0)["v"]
+        # En el PDF, el bloque de un producto a veces repite el precio de otro (p. ej. "Mesa Auxiliar"
+        # muestra también el de "Mesa Modular"): se descarta si la versión no corresponde al producto.
+        if version and re.match(r"^mesa ", version, re.I) and version.lower() not in name.lower():
+            continue
+        text = cell["t"] or ""
+        if text.startswith("Vinil grado 3"):
+            text = "Pranna (vinil tipo contract, ideal para alto tráfico)"
+        if version and EXTRAS.match(version):
+            label = ("Taburete a juego" if version.lower().startswith("taburete") else version[:1].upper() + version[1:].lower()) + " (adicional)"
+        else:
+            parts = []
+            if version and not REDUNDANT_VERSIONS.match(version):
+                parts.append(version[:1].upper() + version[1:].lower())
+            if text:
+                parts.append(text)
+            label = " · ".join(parts) or "Precio"
+        out.append({"opcion": label, "precio": value})
+    return out, orphans
 
 
 VERSION_LABELS = re.compile(r"^(asiento y respaldo tapizados?( en)?:?|asiento tapizado( en)?:?|sin tapiz|"
@@ -246,14 +298,18 @@ def main():
             region = [l for l in lines if top <= l[0].y0 < bottom and l[0].x0 > bb.x1 - 2]
             car = next((l for l in region if l[1].startswith("Características")), None)
             pre = next((l for l in region if l[1].startswith("Precios de Lista")), None)
-            feats, opts = [], []
-            for r, t, s in sorted(region, key=lambda l: (l[0].y0, l[0].x0)):
-                if NOISE.search(t) or PRICE.match(t):
+            feats, opts, prices = [], [], []
+            for r, t, s, color in sorted(region, key=lambda l: (l[0].y0, l[0].x0)):
+                if PRICE.match(t):
+                    if pre and r.y0 > pre[0].y0 and color == 0:  # solo precios vigentes (negro)
+                        prices.append((r, int(re.sub(r"[^\d]", "", t.split(".")[0]))))
+                    continue
+                if NOISE.search(t):
                     continue
                 if car and pre and car[0].y0 < r.y0 < pre[0].y0:
                     feats.append(clean(t))
                 elif pre and r.y0 > pre[0].y0:
-                    opts.append((r, t, s))
+                    opts.append((r, t, s, color))
             # Características partidas en dos líneas ("Base:" + detalle)
             merged = []
             for f in feats:
@@ -262,8 +318,12 @@ def main():
                 elif f:
                     merged.append(f)
             versiones, tapices = [], []
-            for cell in group_cells(opts):
-                v, t = cell_text(cell)
+            cells = group_cells(opts)
+            precios, orphans = assign_prices(cells, prices, name)
+            if orphans or not precios:
+                raise SystemExit(f"Precios sin asociar en «{name}» (página {pn}): {orphans or 'ninguno encontrado'}")
+            for cell in cells:
+                v, t = cell_text(cell["lines"])
                 if v:
                     v = re.sub(r"\s+en$", "", v)
                     v = "Taburete a juego (opcional)" if v.lower().startswith("taburete") else v[:1].upper() + v[1:].lower()
@@ -295,11 +355,21 @@ def main():
                 "sku": sku, "cat": cat, "tipo": tipo, "nombre": name, "familia": fam,
                 "medidas": None, "descripcion": " ".join(merged), "caracteristicas": merged,
                 "versiones": versiones,
-                "tapices": tapices, "img": "sillas/" + img,
+                "tapices": tapices, "precios": precios, "desde": min(x["precio"] for x in precios
+                                                                     if "(adicional)" not in x["opcion"]),
+                "img": "sillas/" + img, "pagina": pn,
             })
 
     order = {c["id"]: i for i, c in enumerate(CATEGORIES)}
     products.sort(key=lambda p: order[p["cat"]])
+    # Reporte local para revisar cada precio contra su página del PDF (no se publica).
+    report = ["Revisión de precios de sillería (página del PDF | producto | opción = precio)", ""]
+    for p in sorted(products, key=lambda x: x["pagina"]):
+        report.append(f"p.{p['pagina']:>2} | {p['nombre']}")
+        report += [f"        {x['opcion']} = ${x['precio']:,}" for x in p["precios"]]
+    (ROOT / "tools" / "reporte_precios_sillas.txt").write_text("\n".join(report) + "\n", encoding="utf-8")
+    for p in products:
+        p.pop("pagina")
     text = json.dumps(products, ensure_ascii=False)
     for bad in BANNED + ["$", "embarque", "garantía"]:
         if bad in text.lower():
