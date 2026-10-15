@@ -17,3 +17,6 @@ tools/marcas_excluidas.txt
 tools/reporte_precios_sillas.txt
 tools/reporte_sillas_b.txt
 tools/.ocr_catalogo_b.json
+
+# Pruebas locales (no se publican)
+prototipos/
