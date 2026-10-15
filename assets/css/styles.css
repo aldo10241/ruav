@@ -691,3 +691,9 @@ button.swatch[aria-checked="true"] { border-color: var(--red); }
 .fv-count { font-size: 13px; color: var(--muted); }
 .finish-viewer .btn { justify-self: center; }
 @media (max-width: 600px) { .fv-stage { grid-template-columns: 36px 1fr 36px; gap: 4px; } .swatches .swatch { width: 44px; } }
+.product-media { position: relative; }
+.img-ref {
+  position: absolute; left: 12px; right: 12px; bottom: 12px; font-size: 12.5px; text-align: center;
+  background: rgba(255, 246, 229, .95); border: 1px solid #f0d9a8; color: #6b4e12; border-radius: 8px; padding: 6px 10px;
+}
+.variants a { max-width: 100%; white-space: normal; height: auto; min-height: 38px; padding: 6px 14px; line-height: 1.3; }

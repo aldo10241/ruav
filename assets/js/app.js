@@ -18,8 +18,13 @@
   var CFG = window.RUAV_CONFIG || {};
   var DATA = window.RUAV_CATALOGO || { categorias: [], productos: [] };
   var SILLERIA = window.RUAV_SILLERIA || { categorias: [], productos: [] };
-  var PRODUCTS = DATA.productos.concat(SILLERIA.productos);
-  var CATS = DATA.categorias.map(function (c) { return Object.assign({ grupo: "mobiliario" }, c); }).concat(SILLERIA.categorias);
+  // Segunda línea de sillería (otro proveedor): usa las mismas categorías de Sillería.
+  var SILLERIA_B = (window.RUAV_SILLERIA_B || { productos: [] }).productos.map(function (p) { return Object.assign({ linea: "b" }, p); });
+  var PRODUCTS = DATA.productos.concat(SILLERIA.productos, SILLERIA_B);
+  var CATS = DATA.categorias.map(function (c) { return Object.assign({ grupo: "mobiliario" }, c); }).concat(SILLERIA.categorias)
+    .map(function (c) {
+      return Object.assign({}, c, { count: PRODUCTS.filter(function (p) { return p.cat === c.id; }).length });
+    });
   var GRUPOS = [
     { id: "mobiliario", name: "Mobiliario", blurb: "Escritorios, mesas de juntas, credenzas, almacenamiento, lockers y más, en panel melamínico." },
     { id: "silleria", name: "Sillería", blurb: "Sillas de oficina, visita y multiusos, bancos, sillones lounge y sofás. Elige tu modelo y tapicería y cotiza por WhatsApp." },
@@ -147,8 +152,19 @@
     return o ? o.precio : null;
   }
   var MXN = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 });
-  function money(n) { return MXN.format(n); }
+  var MXN2 = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  // Precios con centavos se muestran exactos ($3,904.55); los enteros sin decimales ($4,670).
+  function money(n) { return Math.round(n * 100) % 100 ? MXN2.format(n) : MXN.format(n); }
+  function ivaSuffix(p) { return p.iva ? " + IVA" : ""; }
+  // Precio aplicable: el de la opción elegida o, si el modelo tiene un solo precio, ese.
+  function unitPrice(p, opcion) {
+    var opts = priceOptions(p);
+    if (opcion && priceOf(p, opcion) !== null) return priceOf(p, opcion);
+    return opts.length === 1 ? opts[0].precio : null;
+  }
   var AVISO_PRECIOS = "Precios de lista en pesos mexicanos, sujetos a cambio sin previo aviso. El precio final, IVA, envío y disponibilidad se confirman en tu cotización.";
+  var AVISO_PRECIOS_IVA = "Precios de lista en pesos mexicanos, más IVA, sujetos a cambio sin previo aviso. El precio final, envío y disponibilidad se confirman en tu cotización.";
+  function avisoFor(p) { return p.iva ? AVISO_PRECIOS_IVA : AVISO_PRECIOS; }
   function validOption(p, opcion) {
     if (!opcion || typeof opcion !== "string") return false;
     return isSilla(p) ? priceOf(p, opcion) !== null : ACAB_BY_NAME.has(opcion);
@@ -158,9 +174,10 @@
     var opt = opcion && validOption(p, opcion) ? " — " + optionLabel(p) + ": " + opcion : "";
     if (isSilla(p)) {
       var cat = CAT_BY_ID.get(p.cat);
-      var precio = opt ? priceOf(p, opcion) : null;
-      var ref = precio !== null ? " — Precio de lista: " + money(precio) + " c/u" : (p.desde ? " — Desde " + money(p.desde) : "");
-      return "• " + p.nombre + " (" + (cat ? cat.name : "Sillería") + ")" + opt + ref + " — Cantidad: " + qty;
+      if (priceOptions(p).length === 1) opt = "";   // un solo precio: no hay tapicería que elegir
+      var precio = unitPrice(p, opcion);
+      var ref = precio !== null ? " — Precio de lista: " + money(precio) + ivaSuffix(p) + " c/u" : (p.desde ? " — Desde " + money(p.desde) + ivaSuffix(p) : "");
+      return "• " + p.nombre + " (" + (cat ? cat.name : "Sillería") + ")" + (p.clave ? " — Clave " + p.clave : "") + opt + ref + " — Cantidad: " + qty;
     }
     return "• " + p.nombre + " — Clave " + p.sku + (p.medidas ? " (" + dimsShort(p) + ")" : "") + opt + " — Cantidad: " + qty;
   }
@@ -296,8 +313,9 @@
           h("a", { href: productUrl(p), text: p.nombre }),
           h("div", { class: "pc-sku", text: isSilla(p) ? subtitle(p) : p.sku + " · " + dimsShort(p) }),
           it.opcion ? h("div", { class: "quote-opt", text: optionLabel(p) + ": " + it.opcion }) : null,
-          isSilla(p) ? h("div", { class: "quote-opt quote-price", text: priceOf(p, it.opcion) !== null
-            ? "Precio de lista: " + money(priceOf(p, it.opcion)) + " c/u" : "Desde " + money(p.desde) + " (elige tapicería en la ficha)" }) : null,
+          isSilla(p) ? h("div", { class: "quote-opt quote-price", text: unitPrice(p, it.opcion) !== null
+            ? "Precio de lista: " + money(unitPrice(p, it.opcion)) + ivaSuffix(p) + " c/u"
+            : "Desde " + money(p.desde) + ivaSuffix(p) + " (elige tapicería en la ficha)" }) : null,
           h("div", { class: "quote-item-row" },
             qtyControl(it.qty, function (v) { Quote.set(p.sku, it.opcion, v); }, true),
             h("button", { type: "button", class: "remove-btn", text: "Quitar", "aria-label": "Quitar " + p.nombre + " " + p.sku,
@@ -397,7 +415,8 @@
           return h("div", null, h("dt", { text: d[0] }), h("dd", { text: fmtLen(d[1]) }));
         })) : null,
         isSilla(p) && p.caracteristicas.length ? h("p", { class: "pc-feat", text: p.caracteristicas[0] }) : null,
-        isSilla(p) && p.desde ? h("p", { class: "pc-price" }, h("small", { text: priceOptions(p).length > 1 ? "Desde" : "Precio de lista" }), money(p.desde), h("sup", { text: "*", title: AVISO_PRECIOS })) : null,
+        isSilla(p) && p.desde ? h("p", { class: "pc-price" }, h("small", { text: (priceOptions(p).length > 1 ? "Desde" : "Precio de lista") + (p.iva ? " · más IVA" : "") }),
+          money(p.desde), h("sup", { text: "*", title: avisoFor(p) })) : null,
         h("div", { class: "pc-actions" },
           addButton(p),
           waAnchor(singleMessage(p, 1), "Cotizar " + p.nombre + " por WhatsApp", "btn btn-wa icon-only"))));
@@ -587,7 +606,7 @@
       if (state.q) {
         var cat = CAT_BY_ID.get(p.cat);
         var hay = normalize([p.nombre, p.sku, p.tipo, p.descripcion, cat ? cat.name : "", dimsShort(p),
-          (p.tapices || []).join(" "), (p.versiones || []).join(" ")].join(" "));
+          (p.tapices || []).join(" "), (p.versiones || []).join(" "), p.clave || ""].join(" "));
         var ok = normalize(state.q).split(/\s+/).every(function (t) { return hay.indexOf(t) > -1; });
         if (!ok) return false;
       }
@@ -918,13 +937,14 @@
 
     var silla = isSilla(p);
     var variants = silla
-      ? PRODUCTS.filter(function (x) { return x.familia === p.familia; })
+      ? PRODUCTS.filter(function (x) { return x.familia === p.familia && (x.linea || "") === (p.linea || ""); })
       : PRODUCTS.filter(function (x) { return x.cat === p.cat && x.nombre === p.nombre; }).sort(function (a, b) {
         var A = a.medidas || {}, B = b.medidas || {};
         return (A.fondo - B.fondo) || (A.frente - B.frente) || (A.alto - B.alto) || 0;
       });
     function variantLabel(v) {
       if (!silla) return v.medidas ? [v.medidas.frente, v.medidas.fondo, v.medidas.alto].map(function (n) { return n < 100 ? n + "mm" : (n / 1000).toFixed(2); }).join(" × ") : v.sku;
+      if (v.nombre.indexOf(p.familia) !== 0) return v.nombre;   // nombres que no empiezan con la familia
       var rest = v.nombre.slice(p.familia.length).replace(/^[\s·-]+/, "");
       return rest || "Estándar";
     }
@@ -936,22 +956,22 @@
     if (silla && priceOptions(p).length) {
       var opts = priceOptions(p);
       var single = opts.length === 1;
-      var priceLabel = h("small", { text: single ? "Precio de lista" : "Desde" });
+      var iva = p.iva ? " · más IVA" : "";
+      var priceLabel = h("small", { text: (single ? "Precio de lista" : "Desde") + iva });
       var priceValue = h("strong", { text: money(single ? opts[0].precio : p.desde) });
-      if (single) optVal = opts[0].opcion;
       tapizSelect = h("div", { class: "price-box" },
         h("div", { class: "price-now" }, priceLabel, priceValue),
-        single ? h("p", { class: "price-opt", text: opts[0].opcion }) : h("label", { class: "tapiz-select" }, "Elige tapicería o versión para ver su precio",
+        single ? (opts[0].opcion !== "Precio sugerido" ? h("p", { class: "price-opt", text: opts[0].opcion }) : null) : h("label", { class: "tapiz-select" }, "Elige tapicería o versión para ver su precio",
           h("select", { class: "field", onchange: function (e) {
             optVal = validOption(p, e.target.value) ? e.target.value : "";
-            priceLabel.textContent = optVal ? "Precio de lista" : "Desde";
+            priceLabel.textContent = (optVal ? "Precio de lista" : "Desde") + iva;
             priceValue.textContent = money(optVal ? priceOf(p, optVal) : p.desde);
             refreshWa();
           } },
             h("option", { value: "", text: "Selecciona una opción" }),
             opts.map(function (o) { return h("option", { value: o.opcion, text: o.opcion + " — " + money(o.precio) }); }))),
         extrasOf(p).map(function (x) { return h("p", { class: "price-extra", text: x.opcion.replace(" (adicional)", "") + ": +" + money(x.precio) + " (adicional)" }); }),
-        h("p", { class: "price-note", text: AVISO_PRECIOS }));
+        h("p", { class: "price-note", text: avisoFor(p) }));
     }
     var acabadoPicker = !silla && ACABADOS.length ? finishPicker(function (nombre) { optVal = nombre; refreshWa(); }) : null;
     refreshWa();
@@ -970,11 +990,12 @@
     if (panel) features.push("Panel melamínico de " + panel[1] + " mm");
 
     var product = h("div", { class: "product" },
-      h("div", { class: "product-media" }, img(p, null, true), h("span", { class: "pc-tag", text: p.tipo })),
+      h("div", { class: "product-media" }, img(p, null, true), h("span", { class: "pc-tag", text: p.tipo }),
+        p.imgRef ? h("span", { class: "img-ref", text: "Imagen de referencia: el modelo puede variar en material o detalles" }) : null),
       h("div", { class: "product-info" },
         h("span", { class: "eyebrow", text: cat.name }),
         h("h1", { text: p.nombre }),
-        silla ? h("div", { class: "pc-sku", text: p.tipo }) : h("div", { class: "pc-sku" }, "Clave: " + p.sku,
+        silla ? h("div", { class: "pc-sku", text: (p.clave ? "Clave: " + p.clave + " · " : "") + p.tipo }) : h("div", { class: "pc-sku" }, "Clave: " + p.sku,
           h("button", { type: "button", class: "copy-btn", text: "Copiar", onclick: function (e) {
             var b = e.currentTarget;
             if (navigator.clipboard) navigator.clipboard.writeText(p.sku).then(function () { b.textContent = "Copiada"; }, function () {});
@@ -998,18 +1019,20 @@
             ? "Te respondemos por WhatsApp para confirmar precio final, existencias, muestrario de tapices y tiempo de entrega."
             : "Te respondemos por WhatsApp con precio, existencias y tiempo de entrega.")),
         h("div", { class: "spec" },
-          silla ? null : h("h2", { text: "Descripción" }),
-          silla ? null : h("p", { text: p.descripcion }),
+          silla && !(p.descripcion && p.descripcion !== p.nombre) ? null : h("h2", { text: "Descripción" }),
+          silla && !(p.descripcion && p.descripcion !== p.nombre) ? null : h("p", { text: p.descripcion }),
+          (p.dimensiones || []).length ? h("h2", { text: "Medidas" }) : null,
+          (p.dimensiones || []).length ? h("ul", null, p.dimensiones.map(function (f) { return h("li", { text: f }); })) : null,
           features.length ? h("h2", { text: "Características" }) : null,
           features.length ? h("ul", null, features.map(function (f) { return h("li", { text: f }); })) : null,
           silla && p.versiones.length ? h("h2", { text: "Opciones" }) : null,
           silla && p.versiones.length ? h("ul", null, p.versiones.map(function (f) { return h("li", { text: f }); })) : null,
-          silla && (p.precios || []).length ? h("h2", { text: "Precios de lista por tapicería" }) : null,
-          silla && (p.precios || []).length ? h("table", { class: "price-table" },
+          silla && (p.precios || []).length > 1 ? h("h2", { text: "Precios de lista por tapicería" }) : null,
+          silla && (p.precios || []).length > 1 ? h("table", { class: "price-table" },
             h("tbody", null, p.precios.map(function (x) {
               return h("tr", null, h("td", { text: x.opcion }), h("td", { text: (x.opcion.indexOf("(adicional)") > -1 ? "+" : "") + money(x.precio) }));
             }))) : null,
-          silla && (p.precios || []).length ? h("p", { class: "price-note", text: AVISO_PRECIOS }) : null)));
+          silla && (p.precios || []).length > 1 ? h("p", { class: "price-note", text: avisoFor(p) }) : null)));
     root.appendChild(product);
 
     var groupKey = function (x) { return x.familia || x.nombre; };

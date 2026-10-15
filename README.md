@@ -73,6 +73,26 @@ en los datos. Si cambia el diseño del PDF (páginas, nombres no extraíbles), r
 
 > ⚠️ El PDF **nunca** debe subirse al repositorio (está en `.gitignore`).
 
+### Sillería, segunda línea (lista de precios + catálogo del proveedor B)
+
+```bash
+pip install pymupdf pillow numpy winocr
+python tools/build_sillas_b.py "ruta/Lista_Precios.pdf" "ruta/Catalogo_General.pdf"
+```
+
+- **Lista de precios** (texto): de cada renglón de sillería se toman clave, descripción, **precio
+  sugerido** (más IVA, con centavos exactos) y foto. Nunca se publica "Su precio" ni los tiempos
+  de entrega.
+- **Catálogo** (páginas en imagen): se lee con el OCR de Windows para obtener características,
+  descripción y medidas, y se cruza con la lista **por clave (SKU)**. El OCR se guarda en
+  `tools/.ocr_catalogo_b.json` (local).
+- Fotos: de la lista; si no hay, se recorta del catálogo (`CROP_OVERRIDES` para casos difíciles);
+  si tampoco, se usa la de un modelo hermano marcada como “Imagen de referencia” (`REF_IMAGES`).
+  Los modelos sin ninguna foto se omiten y quedan listados en el reporte.
+- Correcciones de OCR y erratas del catálogo: `OCR_FIXES` y `DIM_OVERRIDES`.
+- Genera **`tools/reporte_sillas_b.txt`** (local) con clave, precio, categoría, foto, medidas y
+  características de cada modelo para revisarlo antes de publicar.
+
 ## 3. Editar páginas
 
 Modifica las plantillas en `tools/templates/` y ejecuta:
